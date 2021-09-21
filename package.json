@@ -1,0 +1,31 @@
+{
+  "name": "ed-site.nosync",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ed-site.nosync",
+  "author": "Jakob Bergeson",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "gatsby": "^3.13.1",
+    "gatsby-plugin-image": "^1.14.0",
+    "gatsby-plugin-react-helmet": "^4.14.0",
+    "gatsby-plugin-sharp": "^3.14.0",
+    "gatsby-plugin-theme-ui": "^0.11.2",
+    "gatsby-source-contentful": "^5.14.0",
+    "gatsby-source-filesystem": "^3.14.0",
+    "gatsby-transformer-sharp": "^3.14.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "theme-ui": "^0.11.2"
+  }
+}
