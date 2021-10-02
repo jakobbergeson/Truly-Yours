@@ -13,6 +13,9 @@ const Layout = ({ children }) => {
 
     const [open, setOpen] = useState(false);
 
+    const delay = .7;
+
+
     return (
         <>
             <Navigation
@@ -20,7 +23,10 @@ const Layout = ({ children }) => {
                 customStyle={linkStyles.navLink}
                 to='/'
                 direction="right"
-                delay={.6}
+                delay={delay}
+                fadeInOut={true}
+                floatInOut={true}
+                customDelay={delay + .8}
             >
                 SHOP
             </Navigation>
@@ -29,25 +35,36 @@ const Layout = ({ children }) => {
                 customStyle={linkStyles.navLink}
                 to='/'
                 direction="left"
-                delay={.6}
+                delay={delay}
+                fadeInOut={true}
+                floatInOut={true}
+                customDelay={delay + .9}
             >
                 MUSIC
             </Navigation>
             <Navigation
-                themeStyle={{ bottom: 0, right: 0 }}
-                customStyle={!open ? linkStyles.navLink : linkStyles.openFooter}
+                themeStyle={{ bottom: !open ? 0 : 250, right: 0, }}
+                customStyle={linkStyles.navLink}
                 to='/'
                 direction="right"
-                delay={.6}
+                delay={delay}
+                fadeInOut={true}
+                floatInOut={true}
+                customDelay={delay + .7}
+                open={open}
             >
                 VIDEOS
             </Navigation>
             <Navigation
-                themeStyle={{ bottom: 0, left: 0 }}
-                customStyle={!open ? linkStyles.navLink : linkStyles.openFooter}
+                themeStyle={{ bottom: !open ? 0 : 250, left: 0 }}
+                customStyle={linkStyles.navLink}
                 to='/'
                 direction="left"
-                delay={.6}
+                delay={delay}
+                fadeInOut={true}
+                floatInOut={true}
+                customDelay={delay + .75}
+                open={open}
             >
                 ARTISTS
             </Navigation>
@@ -56,7 +73,7 @@ const Layout = ({ children }) => {
                 customStyle={linkStyles.navLink}
                 to='/'
                 direction="down"
-                delay={.6}
+                delay={delay}
             >
                 <StaticImage
                     src='../images/Teddy-icon.png'
