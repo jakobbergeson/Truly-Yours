@@ -10,17 +10,5 @@ export const linkStyles = {
       textDecoration: "none",
       color: "#333333",
       fontWeight: 600,
-   },
-   openFooter: {
-      transform: "translateY(-250px)",
-      position: "fixed",
-      padding: 25,
-      letterSpacing: ".17em",
-      textTransform: "uppercase",
-      zIndex: 100,
-      transition: "all .8s cubic-bezier(.19,1,.22,1)",
-      textDecoration: "none",
-      color: "#333333",
-      fontWeight: 600,
    }
 };
