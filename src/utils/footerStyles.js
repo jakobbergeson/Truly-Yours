@@ -8,7 +8,7 @@ export const footerStyles = {
         width: "100%",
         zIndex: 8,
         color: "#fff",
-        backgroundColor: "#361052",
+        backgroundColor: "#9702e8",
         minHeight: "250px",
         transition: "transform .8s cubic-bezier(.19,1,.22,1)",
     },
@@ -21,7 +21,7 @@ export const footerStyles = {
         width: "100%",
         zIndex: 8,
         color: "#fff",
-        backgroundColor: "#361052",
+        backgroundColor: "#9702e8",
         minHeight: "250px",
         transition: "transform .8s cubic-bezier(.19,1,.22,1)",
     }

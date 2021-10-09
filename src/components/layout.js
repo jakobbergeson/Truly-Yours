@@ -26,6 +26,7 @@ const Layout = ({ children }) => {
                 delay={delay}
                 fadeInOut={true}
                 floatInOut={true}
+                angleInitial={"+"}
                 customDelay={delay + .8}
             >
                 SHOP
@@ -38,6 +39,7 @@ const Layout = ({ children }) => {
                 delay={delay}
                 fadeInOut={true}
                 floatInOut={true}
+                angleInitial={"-"}
                 customDelay={delay + .9}
             >
                 MUSIC
@@ -50,6 +52,7 @@ const Layout = ({ children }) => {
                 delay={delay}
                 fadeInOut={true}
                 floatInOut={true}
+                angleInitial={"-"}
                 customDelay={delay + .7}
                 open={open}
             >
@@ -63,6 +66,7 @@ const Layout = ({ children }) => {
                 delay={delay}
                 fadeInOut={true}
                 floatInOut={true}
+                angleInitial={"+"}
                 customDelay={delay + .75}
                 open={open}
             >
@@ -76,9 +80,9 @@ const Layout = ({ children }) => {
                 delay={delay}
             >
                 <StaticImage
-                    src='../images/Teddy-icon.png'
+                    src='../images/Teddy-icon (2).svg'
                     alt="Home Icon"
-                    width="115px"
+                    width="150px"
                 />
             </Navigation>
             <button
@@ -101,7 +105,6 @@ const Layout = ({ children }) => {
             </FadeAnimation>
             <Footer
                 open={open}
-
             />
         </>
     );

@@ -17,11 +17,11 @@ const Navigation = ({
     floatInOut = null,
     customDelay,
     open,
+    angleInitial,
     ...props
 }) => {
 
     let compRef = useRef(null);
-
 
     const distance = 100;
 
@@ -52,10 +52,10 @@ const Navigation = ({
         });
 
 
-        floatInOut && FloatAnimation(compRef.current, customDelay, delay);
+        floatInOut && FloatAnimation(compRef.current, delay, angleInitial);
 
         fadeInOut &&
-            gsap.timeline({ repeat: -1, defaults: { duration: customDelay, delay: delay + .8 }, smoothChildTiming: true, reverse: true })
+            gsap.timeline({ repeat: -1, defaults: { duration: customDelay, delay: delay + .7 }, smoothChildTiming: true, reverse: true })
                 .to(compRef.current, { opacity: 1 })
                 .to(compRef.current, { opacity: .01 })
                 .to(compRef.current, { opacity: 1 });

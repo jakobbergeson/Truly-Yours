@@ -1,18 +1,37 @@
-import React, { useState } from "react";
 import { gsap } from "gsap";
 
 
-const FloatAnimation = (element, customDelay, delay) => {
+const FloatAnimation = (element, delay, angleInitial) => {
 
   const floater = element;
 
-  const floatDelay = delay + 1;
+  const floatDelay = delay + 2;
+
+  console.log("ANGLE INITIAL: ", angleInitial);
+
+  let minNumber;
+
+  let maxNumber;
+
+  switch (angleInitial) {
+    case "+":
+      minNumber = 5;
+      maxNumber = 12;
+      break;
+    case "-":
+      minNumber = -5;
+      maxNumber = -12;
+      break;
+    default:
+      minNumber = 5;
+      maxNumber = 12;
+  }
 
   const randomX = random(3, 13);
   const randomY = random(3, 17);
   const randomTime = random(1, 2);
   const randomTime2 = random(1, 3);
-  const randomAngle = random(5, 15);
+  const randomAngle = random(minNumber, maxNumber);
 
 
   gsap.timeline().set(floater, {
@@ -25,7 +44,7 @@ const FloatAnimation = (element, customDelay, delay) => {
 
   moveX(floater, 1);
   moveY(floater, -1);
-  rotate(floater, 1);
+  rotate(floater, .7);
 
   function rotate(target, direction) {
 
