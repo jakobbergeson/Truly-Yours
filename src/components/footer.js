@@ -102,38 +102,37 @@ const Footer = ({ open }) => {
             <Flex
                 sx={{
                     justifyContent: 'space-between',
-                    alignItems: 'end',
+                    alignItems: ['center', 'end'],
                     mt: 'auto',
                     ml: 4,
                     mr: 4,
                     mb: 3,
                     fontFamily: 'body',
                     fontSize: [3, null, 'inherit', null, null, null],
-                    flexDirection: ['column', 'row'],
+                    flexDirection: ['column-reverse', 'row'],
 
                 }}>
                 <h3
                     sx={{
                         fontWeight: 400,
                         m: '0px',
-                        fontSize: [2, 3]
+                        fontSize: [2, null]
 
                     }}
                 >
                     ©
-                    <span sx={{ color: 'red', }}> {data.site.siteMetadata.title}</span>.
-                    All rights reserved.
+                    <span sx={{ color: 'red', }}> {data.site.siteMetadata.title}</span>
                 </h3>
                 <Flex
                     sx={{
                         color: 'red',
-                        fontSize: [1],
+                        fontSize: [3, 2],
+                        mb: [5, 0]
                     }}
                 >
                     <Link
                         sx={{
                             fontWeight: 400,
-                            mt: [3, null],
                             mr: 2,
                             ml: 2,
                             cursor: 'pointer',
@@ -148,7 +147,6 @@ const Footer = ({ open }) => {
                     <Link
                         sx={{
                             fontWeight: 400,
-                            mt: [3, null],
                             mr: 2,
                             ml: 2,
                             cursor: 'pointer',
@@ -163,7 +161,6 @@ const Footer = ({ open }) => {
                     <Link
                         sx={{
                             fontWeight: 400,
-                            mt: [3, null],
                             mr: 2,
                             ml: 2,
                             cursor: 'pointer',
@@ -178,7 +175,6 @@ const Footer = ({ open }) => {
                     <Link
                         sx={{
                             fontWeight: 400,
-                            mt: [3, null],
                             mr: 2,
                             ml: 2,
                             cursor: 'pointer',
