@@ -9,7 +9,10 @@ const IndexPage = () => {
       <StaticImage
         src='../images/home-background.svg'
         alt="Anarchy Symbol"
-        sx={{ maxWidth: "400px" }} />
+        sx={{
+          maxWidth: '400px'
+        }}
+      />
     </Layout>
   );
 };
