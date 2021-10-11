@@ -77,12 +77,7 @@ const theme = {
     display: 'block',
     color: 'text',
     cursor: 'pointer',
-  },
-  body: {
-    display: 'block',
-    width: '50%',
-    height: '100%'
-  },
+  }
 };
 
 export default theme;
