@@ -34,7 +34,7 @@ const Layout = ({ children }) => {
             <Navigation
                 themeStyle={{ top: 0, left: 0 }}
                 customStyle={linkStyles.navLink}
-                to='/'
+                to='/music'
                 direction="left"
                 delay={delay}
                 fadeInOut={true}
@@ -99,6 +99,11 @@ const Layout = ({ children }) => {
             >
                 <Flex
                     style={!open ? flexStyles.main : flexStyles.openFooter}
+                    sx={{
+                        pt: '150px',
+                        ml: [null, null, 0, '140px'],
+                        mr: [null, null, 0, '140px']
+                    }}
                 >
                     {children}
                 </Flex>
