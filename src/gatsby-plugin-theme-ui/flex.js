@@ -1,4 +1,4 @@
-export const flexStyles = {
+export const flex = {
   main: {
     justifyContent: 'center',
     minHeight: '100%',

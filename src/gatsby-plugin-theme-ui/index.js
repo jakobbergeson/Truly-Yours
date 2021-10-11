@@ -5,7 +5,7 @@ import { fontSizes } from "./fontSizes";
 import { fontWeights } from "./fontWeights";
 import { lineHeights } from "./lineHeights";
 import { colors } from "./colors";
-import { flex } from "./theme.flex";
+import { flex } from "./flex";
 
 const theme = {
   space,
