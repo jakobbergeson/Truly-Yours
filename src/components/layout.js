@@ -19,7 +19,11 @@ const Layout = ({ children }) => {
     return (
         <>
             <Navigation
-                themeStyle={{ top: 0, right: 0 }}
+                themeStyle={{
+                    top: 0,
+                    right: 0,
+                    padding: ['18px', '25px'],
+                }}
                 customStyle={linkStyles.navLink}
                 to='/'
                 direction="right"
@@ -32,7 +36,11 @@ const Layout = ({ children }) => {
                 SHOP
             </Navigation>
             <Navigation
-                themeStyle={{ top: 0, left: 0 }}
+                themeStyle={{
+                    top: 0,
+                    left: 0,
+                    padding: ['18px', '25px'],
+                }}
                 customStyle={linkStyles.navLink}
                 to='/music'
                 direction="left"
@@ -45,7 +53,11 @@ const Layout = ({ children }) => {
                 MUSIC
             </Navigation>
             <Navigation
-                themeStyle={{ bottom: !open ? 0 : 250, right: 0, }}
+                themeStyle={{
+                    bottom: !open ? 0 : 250,
+                    right: 0,
+                    padding: ['18px', '25px']
+                }}
                 customStyle={linkStyles.navLink}
                 to='/'
                 direction="right"
@@ -59,7 +71,12 @@ const Layout = ({ children }) => {
                 VIDEOS
             </Navigation>
             <Navigation
-                themeStyle={{ bottom: !open ? 0 : 250, left: 0 }}
+                themeStyle={{
+                    bottom: !open ? 0 : 250,
+                    left: 0,
+                    padding: ['18px', '25px']
+
+                }}
                 customStyle={linkStyles.navLink}
                 to='/'
                 direction="left"
@@ -73,7 +90,13 @@ const Layout = ({ children }) => {
                 ARTISTS
             </Navigation>
             <Navigation
-                themeStyle={{ top: 0, right: "50%", mt: -4, transform: "translateX(50%) translateY(0)", }}
+                themeStyle={{
+                    top: 0,
+                    right: "50%",
+                    mt: -4,
+                    transform: "translateX(50%) translateY(0)",
+                    padding: 25
+                }}
                 customStyle={linkStyles.navLink}
                 to='/'
                 direction="down"
@@ -82,11 +105,10 @@ const Layout = ({ children }) => {
                 <StaticImage
                     src='../images/Teddy-icon (2).svg'
                     alt="Home Icon"
-                    width="150px"
                 />
             </Navigation>
             <button
-                sx={{ bottom: 0, right: "50%", padding: "none", fontSize: 2 }}
+                sx={{ bottom: 0, right: "50%", fontSize: 2 }}
                 style={!open ? buttonStyles.bottomButton : buttonStyles.openFooter}
                 onClick={() => { setOpen(!open); }}
             >
@@ -100,9 +122,10 @@ const Layout = ({ children }) => {
                 <Flex
                     style={!open ? flexStyles.main : flexStyles.openFooter}
                     sx={{
-                        pt: '150px',
-                        ml: [null, null, 0, '140px'],
-                        mr: [null, null, 0, '140px']
+                        pt: '100px',
+                        pb: '60px',
+                        ml: [null, 0, '100px', '140px'],
+                        mr: [null, 0, '100px', '140px']
                     }}
                 >
                     {children}

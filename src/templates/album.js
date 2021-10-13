@@ -1,13 +1,133 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx, Flex, Grid } from "theme-ui";
+import { graphql } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../components/layout";
+import { albumStyles } from "../utils/albumStyles";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faSoundcloud,
+  faSpotify,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
 
-const Album = () => {
+
+export const query = graphql`
+query($slug: String!) {
+  contentfulAlbum(slug: { eq: $slug }) {
+    title
+    tracklist
+    albumArt {
+      gatsbyImageData(height: 500)
+    }
+  }
+}
+`;
+const Album = ({ data }) => {
+
+  const image = getImage(data.contentfulAlbum.albumArt);
 
   return (
     <Layout>
-      SINGLE ALBUM TEST
-    </Layout>
+      <Flex
+        sx={albumStyles.wrapper}
+      >
+        <Flex
+          sx={albumStyles.titleBox}
+        >
+          <h1
+            sx={{
+              mt: 0
+            }}
+          >
+            {data.contentfulAlbum.title}
+            <div
+              sx={albumStyles.underline}
+            >
+            </div>
+          </h1>
+        </Flex>
+        <Grid
+          sx={albumStyles.grid}
+        >
+          <GatsbyImage
+            image={image}
+          />
+          <ol
+            sx={albumStyles.tracklist}
+          >
+            {data.contentfulAlbum.tracklist.map((song, index) => {
+
+              return (
+                <li
+                  key={index}
+                >
+                  <p
+                    sx={albumStyles.trackListItem}
+                  > {song} </p>
+                </li>
+              );
+            })}
+
+          </ol>
+        </Grid>
+        <Grid
+          sx={albumStyles.linkBox}
+        >
+          <Flex
+            sx={albumStyles.listenBox}
+          >
+            <h1>
+              LISTEN ON
+            </h1>
+          </Flex>
+          <Flex
+            sx={albumStyles.iconBox}
+          >
+            <a
+              href="https://soundcloud.com/"
+              target="_blank"
+              rel="noreferrer"
+              sx={{
+                m: 3
+              }}
+            >
+              <FontAwesomeIcon
+                icon={faSoundcloud}
+                sx={albumStyles.streamIcon}
+              />
+            </a>
+            <a
+              href="https://spotify.com/"
+              target="_blank"
+              rel="noreferrer"
+              sx={{
+                m: 3
+              }}
+            >
+              <FontAwesomeIcon
+                icon={faSpotify}
+                sx={albumStyles.streamIcon}
+              />
+            </a>
+            <a
+              href="https://youtube.com/"
+              target="_blank"
+              rel="noreferrer"
+              sx={{
+                m: 3
+              }}
+            >
+              <FontAwesomeIcon
+                icon={faYoutube}
+                sx={albumStyles.streamIcon}
+              />
+            </a>
+          </Flex>
+
+        </Grid>
+      </Flex>
+    </Layout >
   );
 };
 

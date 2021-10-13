@@ -17,6 +17,7 @@ module.exports.createPages = async ({ graphql, actions }) => {
             }
           }
         }
+      }
   `).then(result => {
 
     result.data.album.edges.forEach(({ node }) => {

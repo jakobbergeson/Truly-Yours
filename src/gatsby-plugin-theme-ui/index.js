@@ -6,6 +6,7 @@ import { fontWeights } from "./fontWeights";
 import { lineHeights } from "./lineHeights";
 import { colors } from "./colors";
 import { flex } from "./flex";
+import { linkStyles } from "./linkStyles";
 
 const theme = {
   space,
@@ -25,6 +26,7 @@ const theme = {
       bg: 'primary',
     },
   },
+  linkStyles,
   h1: {
     color: 'text',
     fontFamily: 'heading',
