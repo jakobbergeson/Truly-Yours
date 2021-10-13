@@ -2,7 +2,6 @@
 export const linkStyles = {
    navLink: {
       position: "fixed",
-      padding: 25,
       letterSpacing: ".17em",
       textTransform: "uppercase",
       zIndex: 100,

@@ -27,10 +27,7 @@ const Music = () => {
   return (
     <Layout>
       <ol
-        style={listStyles.musicList}
-        sx={{
-          gridTemplateColumns: [null, null, '1fr', '1fr 1fr']
-        }}
+        sx={listStyles.musicList}
       >
         {data.allContentfulAlbum.edges.map(({ node }) => {
 
@@ -39,7 +36,7 @@ const Music = () => {
           return (
             <li
               key={node.id}
-              style={listStyles.musicListLink}
+              sx={listStyles.musicListLink}
             >
               <Link
                 to={`/album/${node.slug}`}
