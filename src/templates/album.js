@@ -17,6 +17,9 @@ query($slug: String!) {
   contentfulAlbum(slug: { eq: $slug }) {
     title
     tracklist
+    soundcloudLink
+    spotifyLink
+    youtubeLink
     albumArt {
       gatsbyImageData(height: 500)
     }
@@ -85,7 +88,7 @@ const Album = ({ data }) => {
             sx={albumStyles.iconBox}
           >
             <a
-              href="https://soundcloud.com/"
+              href={data.contentfulAlbum.soundcloudLink}
               target="_blank"
               rel="noreferrer"
               sx={{
@@ -98,7 +101,7 @@ const Album = ({ data }) => {
               />
             </a>
             <a
-              href="https://spotify.com/"
+              href={data.contentfulAlbum.spotifyLink}
               target="_blank"
               rel="noreferrer"
               sx={{
@@ -111,7 +114,7 @@ const Album = ({ data }) => {
               />
             </a>
             <a
-              href="https://youtube.com/"
+              href={data.contentfulAlbum.youtubeLink}
               target="_blank"
               rel="noreferrer"
               sx={{
