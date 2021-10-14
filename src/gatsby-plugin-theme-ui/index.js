@@ -77,7 +77,6 @@ const theme = {
   },
   a: {
     display: 'block',
-    color: 'text',
     cursor: 'pointer',
   }
 };

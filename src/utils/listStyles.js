@@ -7,6 +7,6 @@ export const listStyles = {
     gridTemplateColumns: [null, null, '1fr', '1fr 1fr']
   },
   musicListLink: {
-    padding: '10px'
+    p: ['10px', null, null, '50px'],
   }
 }
