@@ -4,5 +4,6 @@ export const breakpoints = [
     "767px",
     "992px",
     "1280px",
-    "1440px"
+    "1440px",
+    "2000px",
 ]

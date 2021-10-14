@@ -108,7 +108,7 @@ const Layout = ({ children }) => {
                 />
             </Navigation>
             <button
-                sx={{ bottom: 0, right: "50%", fontSize: 2 }}
+                sx={{ bottom: 0, right: "50%", fontSize: 3 }}
                 style={!open ? buttonStyles.bottomButton : buttonStyles.openFooter}
                 onClick={() => { setOpen(!open); }}
             >
@@ -120,13 +120,7 @@ const Layout = ({ children }) => {
                 delay={.5}
             >
                 <Flex
-                    style={!open ? flexStyles.main : flexStyles.openFooter}
-                    sx={{
-                        pt: '100px',
-                        pb: '60px',
-                        ml: [null, 0, '100px', '140px'],
-                        mr: [null, 0, '100px', '140px']
-                    }}
+                    sx={!open ? flexStyles.main : flexStyles.openFooter}
                 >
                     {children}
                 </Flex>
