@@ -8,5 +8,13 @@ export const listStyles = {
   },
   musicListLink: {
     p: ['10px', null, null, '50px'],
+  },
+  videoList: {
+    width: '100vw',
+    position: 'absolute',
+    display: 'grid',
+    gridTemplateColumns: '1fr',
+    p: 0,
+    listStyle: 'none',
   }
 }

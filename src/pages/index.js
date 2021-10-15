@@ -11,6 +11,8 @@ const IndexPage = () => {
         alt="Anarchy Symbol"
         sx={{
           maxWidth: '500px',
+          maxHeight: '500px',
+          m: 'auto'
         }}
       />
     </Layout>

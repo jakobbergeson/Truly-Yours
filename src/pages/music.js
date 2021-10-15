@@ -48,8 +48,6 @@ const Music = () => {
             </li>
           );
         })}
-
-
       </ol>
     </Layout >
   );

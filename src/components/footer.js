@@ -82,8 +82,8 @@ const Footer = ({ open }) => {
                     sx={footerStyles.navigationBox}
                 >
                     <Link
-                        sx={footerStyles.navLink}
                         to={'/music'}
+                        sx={footerStyles.navLink}
                     >
                         MUSIC
                     </Link>
@@ -98,6 +98,7 @@ const Footer = ({ open }) => {
                         ARTISTS
                     </Link>
                     <Link
+                        to={'/video'}
                         sx={footerStyles.navLink}
                     >
                         VIDEOS
