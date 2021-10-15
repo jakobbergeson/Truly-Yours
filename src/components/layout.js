@@ -59,7 +59,7 @@ const Layout = ({ children }) => {
                     padding: ['18px', '25px']
                 }}
                 customStyle={layoutStyles.navLink}
-                to='/'
+                to='/video'
                 direction="right"
                 delay={delay}
                 fadeInOut={true}
