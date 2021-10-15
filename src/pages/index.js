@@ -10,8 +10,7 @@ const IndexPage = () => {
         src='../images/home-background.svg'
         alt="Anarchy Symbol"
         sx={{
-          maxHeight: '600px',
-          m: 'auto',
+          maxWidth: '500px',
         }}
       />
     </Layout>

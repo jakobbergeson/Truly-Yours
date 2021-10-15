@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Navigation from "./navigation";
 import Footer from "./footer";
 import FadeAnimation from "./fadeAnimation";
-import { linkStyles } from "../utils";
+import { layoutStyles } from "../utils";
 import { buttonStyles } from "../utils";
 import { flexStyles } from "../utils";
 import { StaticImage } from "gatsby-plugin-image";
@@ -24,7 +24,7 @@ const Layout = ({ children }) => {
                     right: 0,
                     padding: ['18px', '25px'],
                 }}
-                customStyle={linkStyles.navLink}
+                customStyle={layoutStyles.navLink}
                 to='/'
                 direction="right"
                 delay={delay}
@@ -41,7 +41,7 @@ const Layout = ({ children }) => {
                     left: 0,
                     padding: ['18px', '25px'],
                 }}
-                customStyle={linkStyles.navLink}
+                customStyle={layoutStyles.navLink}
                 to='/music'
                 direction="left"
                 delay={delay}
@@ -58,7 +58,7 @@ const Layout = ({ children }) => {
                     right: 0,
                     padding: ['18px', '25px']
                 }}
-                customStyle={linkStyles.navLink}
+                customStyle={layoutStyles.navLink}
                 to='/'
                 direction="right"
                 delay={delay}
@@ -77,7 +77,7 @@ const Layout = ({ children }) => {
                     padding: ['18px', '25px']
 
                 }}
-                customStyle={linkStyles.navLink}
+                customStyle={layoutStyles.navLink}
                 to='/'
                 direction="left"
                 delay={delay}
@@ -97,7 +97,7 @@ const Layout = ({ children }) => {
                     transform: "translateX(50%) translateY(0)",
                     padding: 25
                 }}
-                customStyle={linkStyles.navLink}
+                customStyle={layoutStyles.navLink}
                 to='/'
                 direction="down"
                 delay={delay}

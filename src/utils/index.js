@@ -1,10 +1,10 @@
-import { linkStyles } from "./linkStyles";
+import { layoutStyles } from "./layoutStyles";
 import { buttonStyles } from "./buttonStyles";
 import { footerStyles } from "./footerStyles";
 import { flexStyles } from "./flexStyles";
 
 export {
-    linkStyles,
+    layoutStyles,
     buttonStyles,
     footerStyles,
     flexStyles,
