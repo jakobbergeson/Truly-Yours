@@ -27,7 +27,7 @@ const Music = () => {
 
   return (
     <Layout>
-      <HeadTag title={'Muisc'} />
+      <HeadTag title={'Music'} />
       <ol
         sx={listStyles.musicList}
       >

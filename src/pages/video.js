@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Flex } from "theme-ui";
+import { jsx } from "theme-ui";
 import { graphql, useStaticQuery } from "gatsby";
 import Layout from "../components/layout";
 import HeadTag from "../components/headTag";
