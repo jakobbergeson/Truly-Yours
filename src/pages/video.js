@@ -2,7 +2,9 @@
 import { jsx, Flex } from "theme-ui";
 import { graphql, useStaticQuery } from "gatsby";
 import Layout from "../components/layout";
+import HeadTag from "../components/headTag";
 import { listStyles } from "../utils/";
+import { videsoStyles } from "../utils/";
 
 const Video = () => {
 
@@ -22,9 +24,7 @@ const Video = () => {
 
   return (
     <Layout>
-
-
-
+      <HeadTag title={'Videos'} />
       <ol
         sx={listStyles.videoList}
       >
@@ -39,10 +39,7 @@ const Video = () => {
               }}
             >
               <iframe
-                sx={{
-                  width: '100%',
-                  height: ['75vh', '80vh', null, '83vh', '70vh']
-                }}
+                sx={videsoStyles.youtubePlayer}
                 src={node.url}
                 title="YouTube video player"
                 frameborder="0"

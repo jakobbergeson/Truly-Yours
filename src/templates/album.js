@@ -3,6 +3,7 @@ import { jsx, Flex, Grid } from "theme-ui";
 import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../components/layout";
+import HeadTag from "../components/headTag";
 import { albumStyles } from "../utils/albumStyles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -32,6 +33,7 @@ const Album = ({ data }) => {
 
   return (
     <Layout>
+      <HeadTag title={data.contentfulAlbum.title} />
       <Flex
         sx={albumStyles.wrapper}
       >

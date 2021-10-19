@@ -3,6 +3,7 @@ import { buttonStyles } from "./buttonStyles";
 import { footerStyles } from "./footerStyles";
 import { flexStyles } from "./flexStyles";
 import { listStyles } from "./listStyles";
+import { videsoStyles } from "./videoStyles";
 
 export {
     layoutStyles,
@@ -10,4 +11,5 @@ export {
     footerStyles,
     flexStyles,
     listStyles,
+    videsoStyles,
 };
