@@ -3,6 +3,7 @@ import { jsx } from "theme-ui";
 import { Link, graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../components/layout";
+import HeadTag from "../components/headTag";
 import { listStyles } from "../utils/listStyles";
 
 const Music = () => {
@@ -26,6 +27,7 @@ const Music = () => {
 
   return (
     <Layout>
+      <HeadTag title={'Muisc'} />
       <ol
         sx={listStyles.musicList}
       >

@@ -1,11 +1,13 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import Layout from "../components/layout";
 import { StaticImage } from "gatsby-plugin-image";
+import Layout from "../components/layout";
+import HeadTag from "../components/headTag";
 
 const IndexPage = () => {
   return (
     <Layout>
+      <HeadTag title={'Home'} />
       <StaticImage
         src='../images/home-background.svg'
         alt="Anarchy Symbol"
