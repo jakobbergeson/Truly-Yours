@@ -78,7 +78,7 @@ const Layout = ({ children }) => {
 
                 }}
                 customStyle={layoutStyles.navLink}
-                to='/'
+                to='/artists'
                 direction="left"
                 delay={delay}
                 fadeInOut={true}
