@@ -8,6 +8,7 @@ import { layoutStyles } from "../utils";
 import { buttonStyles } from "../utils";
 import { flexStyles } from "../utils";
 import { StaticImage } from "gatsby-plugin-image";
+import '../styles/layout.css';
 
 const Layout = ({ children }) => {
 
