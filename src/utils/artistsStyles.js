@@ -9,21 +9,21 @@ export const artistsStyles = {
     justifyContent: 'center'
   },
   galImgBox: {
-    justifyContent: 'space-between',
+    // justifyContent: 'space-around',
   },
   galImgBtn: {
     borderStyle: 'none',
     backgroundColor: 'transparent',
     cursor: 'pointer',
     p: 0,
-    width: ['75px', null, '100px', null, '150px'],
-    m: '1.5rem',
+    width: ['100px', null, '200px', null, '250px'],
+    m: ['.5rem', '1rem'],
   },
   blogBox: {
     display: 'flex',
     justifyContent: 'space-around',
     textDecoration: 'none',
-    backgroundColor: '#ffffff',
+    backgroundColor: 'gray',
     p: '.5rem',
     color: '#333333'
   },
@@ -55,21 +55,21 @@ export const artistsStyles = {
       right: 0,
       bottom: 0,
       backgroundColor: 'rgba(0, 0, 0, 0.75)',
+      cursor: 'pointer',
     },
     content: {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      position: 'absolute',
-      top: '15%',
-      left: '15%',
-      right: '15%',
-      bottom: '15%',
+      maxWidth: 'max-content',
+      maxHeight: 'max-content',
+      margin: 'auto',
       border: 'none',
       background: '#fff',
       overflow: 'auto',
       WebkitOverflowScrolling: 'touch',
       outline: 'none',
+      cursor: 'default',
     }
   },
 }

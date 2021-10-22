@@ -93,6 +93,7 @@ const Footer = ({ open }) => {
                         SHOP
                     </Link>
                     <Link
+                        to={'/artists'}
                         sx={footerStyles.navLink}
                     >
                         ARTISTS

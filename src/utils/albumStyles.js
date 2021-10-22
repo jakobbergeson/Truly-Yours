@@ -24,7 +24,7 @@ export const albumStyles = {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    bg: '#f5f5f5',
+    bg: 'gray',
     mt: 0,
     mb: 0,
   },
@@ -40,9 +40,7 @@ export const albumStyles = {
     gap: ['20px', null, null, null, null, '110px'],
     mt: ['10px', null],
     mb: 'auto',
-    mr: ['10px', null],
-    ml: ['10px', null],
-    bg: '#f5f5f5'
+    bg: 'gray'
   },
   listenBox: {
     bg: 'black',

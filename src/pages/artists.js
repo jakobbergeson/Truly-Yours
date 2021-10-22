@@ -28,12 +28,10 @@ const Artists = () => {
             gatsbyImageData
           }
           galleryPictures{
-            gatsbyImageData
+            gatsbyImageData(width: 600)
           }
           blogPostTitle
-          blogPostBody{
-            raw
-          }
+          slug
         }
       }
     }

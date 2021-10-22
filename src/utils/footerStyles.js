@@ -36,7 +36,7 @@ export const footerStyles = {
     },
     socialIcons: {
         color: 'white',
-        fontSize: [5, 6, null, null, null, null, 7],
+        fontSize: [5, 6, null, null, null, null, null, 7],
         transition: 'opacity 450ms',
         '&:hover': {
             transition: 'opacity 125ms',
@@ -67,7 +67,7 @@ export const footerStyles = {
         ml: 2,
         color: 'red',
         textDecoration: 'none',
-        fontSize: [3, null, null, null, null, null, 4],
+        fontSize: [2, 3, null, null, null, null, null, 4],
         cursor: 'pointer',
         transition: 'opacity 450ms',
         '&:hover': {
