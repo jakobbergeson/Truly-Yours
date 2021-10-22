@@ -5,6 +5,7 @@ import { flexStyles } from "./flexStyles";
 import { listStyles } from "./listStyles";
 import { videsoStyles } from "./videoStyles";
 import { artistsStyles } from "./artistsStyles";
+import { blogStyles } from "./blogStyles";
 
 export {
     layoutStyles,
@@ -14,4 +15,5 @@ export {
     listStyles,
     videsoStyles,
     artistsStyles,
+    blogStyles,
 };

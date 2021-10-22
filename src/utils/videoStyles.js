@@ -1,6 +1,6 @@
 export const videsoStyles = {
   youtubePlayer: {
     width: '100%',
-    height: ['75vh', '80vh', null, '83vh', '70vh']
+    height: ['72vh', '75vh', '75vh', '80vh', '78vh', '70vh', '72vh', '80vh']
   }
 }
