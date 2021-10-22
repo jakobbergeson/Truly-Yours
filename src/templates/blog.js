@@ -46,7 +46,9 @@ const Blog = ({ data }) => {
               sx={albumStyles.underline}
             />
           </h2>
+
           {data.contentfulArtist.publishedDate}
+
         </Flex>
         {renderRichText(data.contentfulArtist.blogPostBody, body)}
       </Flex>

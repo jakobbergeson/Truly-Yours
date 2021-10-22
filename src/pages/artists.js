@@ -96,7 +96,12 @@ const Artists = () => {
               <div
                 sx={artistsStyles.postDate}
               >
-                {node.publishedDate}
+                <p
+                  sx={artistsStyles.postDateChild}
+                >
+                  {node.publishedDate}
+
+                </p>
               </div>
               <div
                 sx={artistsStyles.blogDivider}

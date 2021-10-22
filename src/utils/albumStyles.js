@@ -7,6 +7,10 @@ export const albumStyles = {
     justifyContent: 'center',
     alignItems: 'center',
   },
+  title: {
+    fontWeight: 'body',
+    mt: 0,
+  },
   underline: {
     position: 'relative',
     right: '10%',
@@ -23,13 +27,16 @@ export const albumStyles = {
   tracklist: {
     display: 'flex',
     flexDirection: 'column',
+    alignItems: 'center',
     justifyContent: 'center',
+    fontWeight: 'body',
     bg: 'gray',
     mt: 0,
     mb: 0,
+    p: 0,
   },
   trackListItem: {
-    fontWeight: 400,
+    fontWeight: 'body',
     fontSize: [3, 4],
     m: 0,
     pt: '.5rem',
@@ -47,7 +54,11 @@ export const albumStyles = {
     color: 'white',
     justifyContent: 'center',
     alignItems: 'center',
-    width: 'auto'
+    width: 'auto',
+    fontWeight: 'body'
+  },
+  listenBoxChild: {
+    fontWeight: 400,
   },
   iconBox: {
     justifyContent: 'space-between',
@@ -55,7 +66,7 @@ export const albumStyles = {
   },
   streamIcon: {
     color: 'black',
-    fontSize: 7,
+    fontSize: 54,
     transition: 'opacity 450ms',
     '&:hover': {
       transition: 'opacity 125ms',
