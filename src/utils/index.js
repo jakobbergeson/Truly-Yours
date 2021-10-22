@@ -4,7 +4,7 @@ import { footerStyles } from "./footerStyles";
 import { flexStyles } from "./flexStyles";
 import { listStyles } from "./listStyles";
 import { videsoStyles } from "./videoStyles";
-import { artitsStyles } from "./artistsStyles";
+import { artistsStyles } from "./artistsStyles";
 
 export {
     layoutStyles,
@@ -13,5 +13,5 @@ export {
     flexStyles,
     listStyles,
     videsoStyles,
-    artitsStyles,
+    artistsStyles,
 };
