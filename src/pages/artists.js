@@ -6,7 +6,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import ReactModal from 'react-modal';
 import Layout from '../components/layout';
 import HeadTag from '../components/headTag';
-import { artitsStyles } from '../utils';
+import { artistsStyles } from '../utils';
 
 ReactModal.setAppElement('#___gatsby');
 
@@ -25,7 +25,7 @@ const Artists = () => {
           artistName
           publishedDate(formatString: "MMM D")
           bannerPicture {
-            gatsbyImageData(width: 500)
+            gatsbyImageData
           }
           galleryPictures{
             gatsbyImageData
@@ -52,49 +52,68 @@ const Artists = () => {
         return (
           <Flex
             key={node.id}
-            sx={artitsStyles.artistWrapper}
+            sx={artistsStyles.artistWrapper}
           >
             <HeadTag title={node.artistName} />
-            <GatsbyImage image={bannerImage} />
             <Flex
-              sx={artitsStyles.galImgBox}
+              sx={artistsStyles.banImgBox}
+            >
+              <GatsbyImage
+                image={bannerImage}
+              />
+            </Flex>
+            <Flex
+
+              sx={artistsStyles.galImgBox}
             >
               {galleryImage1 && <button
                 onClick={() => setModal1(true)}
-                sx={artitsStyles.galImgBtn}
+                sx={artistsStyles.galImgBtn}
               >
-                <GatsbyImage image={galleryImage1} />
+                <GatsbyImage
+                  image={galleryImage1}
+                />
               </button>}
               {galleryImage2 && <button
                 onClick={() => setModal2(true)}
-                sx={artitsStyles.galImgBtn}
+                sx={artistsStyles.galImgBtn}
               >
-                <GatsbyImage image={galleryImage2} />
+                <GatsbyImage
+                  image={galleryImage2}
+                />
               </button>}
               {galleryImage3 && <button
                 onClick={() => setModal3(true)}
-                sx={artitsStyles.galImgBtn}
+                sx={artistsStyles.galImgBtn}
               >
-                <GatsbyImage image={galleryImage3} />
+                <GatsbyImage
+                  image={galleryImage3}
+                />
               </button>}
             </Flex>
             <Link
               to={`/blog/${node.slug}`}
-              sx={artitsStyles.blogBox}
+              sx={artistsStyles.blogBox}
             >
-              <Flex
-                sx={artitsStyles.postDate}
+              <div
+                sx={artistsStyles.postDate}
               >
                 {node.publishedDate}
-              </Flex>
-              <h1>{node.blogPostTitle}</h1>
+              </div>
+              <div
+                sx={artistsStyles.blogDivider}
+              />
+              <p
+                sx={artistsStyles.blogTitle}
+              >{node.blogPostTitle}
+              </p>
             </Link>
             <ReactModal
               closeTimeoutMS={300}
               isOpen={modal1}
               onRequestClose={() => setModal1(false)}
               shouldCloseOnOverlayClick={true}
-              style={artitsStyles.modal}
+              style={artistsStyles.modal}
             >
               <GatsbyImage image={galleryImage1} />
             </ReactModal>
@@ -103,7 +122,7 @@ const Artists = () => {
               isOpen={modal2}
               onRequestClose={() => setModal2(false)}
               shouldCloseOnOverlayClick={true}
-              style={artitsStyles.modal}
+              style={artistsStyles.modal}
             >
               <GatsbyImage
                 image={galleryImage2}
@@ -114,7 +133,7 @@ const Artists = () => {
               isOpen={modal3}
               onRequestClose={() => setModal3(false)}
               shouldCloseOnOverlayClick={true}
-              style={artitsStyles.modal}
+              style={artistsStyles.modal}
             >
               <GatsbyImage image={galleryImage3} />
             </ReactModal>

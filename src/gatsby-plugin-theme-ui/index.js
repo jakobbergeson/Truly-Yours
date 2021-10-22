@@ -23,6 +23,7 @@ const theme = {
       lineHeight: 'body',
       fontWeight: 'body',
       bg: 'primary',
+      letterSpacing: '.17em',
     },
   },
   h1: {

@@ -15,10 +15,10 @@ export const albumStyles = {
     backgroundColor: '#333333',
   },
   grid: {
-    gridTemplateColumns: [null, null, '1fr', '1fr 1fr'],
+    gridTemplateColumns: [null, null, null, null, '1fr', '1fr 1fr'],
     margin: [null, null, null, 'auto'],
-    gap: ['20px', null, null, '110px'],
-    p: '10px'
+    gap: ['20px', null, null, null, null, '110px'],
+    pb: '10px'
   },
   tracklist: {
     display: 'flex',
@@ -36,8 +36,8 @@ export const albumStyles = {
     pb: '.5rem'
   },
   linkBox: {
-    gridTemplateColumns: [null, null, '1fr', '1fr 1fr'],
-    gap: ['20px', null, null, '110px'],
+    gridTemplateColumns: [null, null, null, null, '1fr', '1fr 1fr'],
+    gap: ['20px', null, null, null, null, '110px'],
     mt: ['10px', null],
     mb: 'auto',
     mr: ['10px', null],

@@ -7,7 +7,9 @@ export const listStyles = {
     gridTemplateColumns: [null, null, '1fr', '1fr 1fr']
   },
   musicListLink: {
-    p: ['10px', null, null, '50px'],
+    p: [null, null, null, '50px'],
+    pb: ['10px', null],
+    pt: ['10px', null],
   },
   videoList: {
     width: '100vw',
