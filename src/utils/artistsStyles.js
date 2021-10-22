@@ -9,7 +9,6 @@ export const artistsStyles = {
     justifyContent: 'center'
   },
   galImgBox: {
-    // justifyContent: 'space-around',
   },
   galImgBtn: {
     borderStyle: 'none',
@@ -32,19 +31,24 @@ export const artistsStyles = {
     alignItems: 'center',
     color: 'white',
     backgroundColor: 'black',
-    padding: ' 9px',
+    padding: ['3px', '9px'],
     maxWidth: 'max-content',
+  },
+  postDateChild: {
+    m: 0,
+    textAlign: ['center', 'left']
   },
   blogTitle: {
     m: 0,
-    fontSize: [4],
+    fontSize: [2, 4],
     fontWeight: 'body',
+    textAlign: ['center', 'left']
   },
   blogDivider: {
-    width: '3px',
+    width: ['2px'],
     height: 'auto',
-    mr: '10px',
-    ml: '10px',
+    mr: [0, '10px'],
+    ml: ['15px', '10px'],
     backgroundColor: 'text',
   },
   modal: {

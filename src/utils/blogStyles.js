@@ -13,5 +13,6 @@ export const blogStyles = {
   title: {
     fontWeight: 400,
     mb: 0,
+    fontSize: [2, 4]
   },
 }

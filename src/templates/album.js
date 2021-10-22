@@ -41,15 +41,12 @@ const Album = ({ data }) => {
           sx={albumStyles.titleBox}
         >
           <h1
-            sx={{
-              mt: 0
-            }}
+            sx={albumStyles.title}
           >
             {data.contentfulAlbum.title}
             <div
               sx={albumStyles.underline}
-            >
-            </div>
+            />
           </h1>
         </Flex>
         <Grid
@@ -69,7 +66,9 @@ const Album = ({ data }) => {
                 >
                   <p
                     sx={albumStyles.trackListItem}
-                  > {song} </p>
+                  >
+                    {song}
+                  </p>
                 </li>
               );
             })}
@@ -82,7 +81,9 @@ const Album = ({ data }) => {
           <Flex
             sx={albumStyles.listenBox}
           >
-            <h1>
+            <h1
+              sx={albumStyles.listenBoxChild}
+            >
               LISTEN ON
             </h1>
           </Flex>
