@@ -5,15 +5,13 @@ export const blogStyles = {
     justifyContent: 'center',
     width: [null, null, null, '800px', null, null, '1000px']
   },
-  title: {
+  header: {
+    flexDirection: 'column',
+    alignItems: 'center',
     opacity: .5,
-    fontWeight: 400,
   },
-  titleLine: {
-    bg: 'text',
-    width: 'auto',
-    height: '2px',
-    mr: '10px',
-    ml: '10px',
-  }
+  title: {
+    fontWeight: 400,
+    mb: 0,
+  },
 }
