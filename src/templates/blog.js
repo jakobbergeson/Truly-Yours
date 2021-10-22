@@ -35,17 +35,22 @@ const Blog = ({ data }) => {
       <Flex
         sx={blogStyles.body}
       >
-        <h2
-          sx={blogStyles.title}
+        <Flex
+          sx={blogStyles.header}
         >
-          {data.contentfulArtist.blogPostTitle}
-          <div
-            sx={albumStyles.underline}
-          />
-        </h2>
+          <h2
+            sx={blogStyles.title}
+          >
+            {data.contentfulArtist.blogPostTitle}
+            <div
+              sx={albumStyles.underline}
+            />
+          </h2>
+          {data.contentfulArtist.publishedDate}
+        </Flex>
         {renderRichText(data.contentfulArtist.blogPostBody, body)}
       </Flex>
-    </Layout >
+    </Layout>
   );
 };
 
