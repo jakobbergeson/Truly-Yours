@@ -28,5 +28,13 @@ module.exports = {
       },
       __key: "images",
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `rage-records`,
+        start_url: `/`,
+        icon: `src/images/Teddy-icon (2).png`,
+      },
+    },
   ],
 };
