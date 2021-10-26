@@ -32,7 +32,17 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-modal": "^3.14.3",
+    "react-icons": "^4.1.0",
     "theme-ui": "^0.11.2",
-    "gatsby-plugin-manifest": "^3.9.0"
+    "gatsby-plugin-manifest": "^3.9.0",
+    "@sindresorhus/slugify": "^1.1.0",
+    "debounce": "^1.2.1",
+    "gatsby-source-shopify": "^5.4.0",
+    "isomorphic-fetch": "^3.0.0",
+    "lodash.debounce": "^4.0.8",
+    "lodash.isequal": "^4.5.0",
+    "query-string": "^7.0.0",
+    "shopify-buy": "^2.11.0",
+    "urql": "^2.0.2"
   }
 }
