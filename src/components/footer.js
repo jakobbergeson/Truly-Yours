@@ -82,24 +82,25 @@ const Footer = ({ open }) => {
                     sx={footerStyles.navigationBox}
                 >
                     <Link
-                        to={'/music'}
+                        to='/music'
                         sx={footerStyles.navLink}
                     >
                         MUSIC
                     </Link>
                     <Link
+                        to='/products/'
                         sx={footerStyles.navLink}
                     >
                         SHOP
                     </Link>
                     <Link
-                        to={'/artists'}
+                        to='/artists'
                         sx={footerStyles.navLink}
                     >
                         ARTISTS
                     </Link>
                     <Link
-                        to={'/video'}
+                        to='/video'
                         sx={footerStyles.navLink}
                     >
                         VIDEOS
