@@ -6,6 +6,7 @@ import { listStyles } from "./listStyles";
 import { videsoStyles } from "./videoStyles";
 import { artistsStyles } from "./artistsStyles";
 import { blogStyles } from "./blogStyles";
+import { productPageStyles } from "./productPageStyles";
 
 export {
     layoutStyles,
@@ -16,4 +17,5 @@ export {
     videsoStyles,
     artistsStyles,
     blogStyles,
+    productPageStyles,
 };

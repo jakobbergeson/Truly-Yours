@@ -8,7 +8,7 @@
 
 .listingContainerStyle {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   place-items: center;
   gap: var(--size-gutter-raw);
   padding: 0 var(--size-gutter-raw);

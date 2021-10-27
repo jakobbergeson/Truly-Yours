@@ -94,29 +94,4 @@
   --size-gutter-raw: var(--space-2xl);
   --size-gutter: calc(var(--size-gutter-raw) - 12px);
 
-  /* product */
-  --product-grid: 1fr 1fr 1fr;
-}
-
-/* role-based token adjustments per breakpoint */
-@media (min-width: 640px) {
-  :root {
-    --product-grid: 1fr 1fr;
-  }
-}
-
-@media (min-width: 1024px) {
-  :root {
-    --text-display: var(--text-3xl);
-    --text-prose: var(--text-lg);
-    --product-grid: repeat(3, 1fr);
-    --size-gutter-raw: var(--space-3xl);
-    --size-gap: var(--space-2xl);
-  }
-}
-
-@media (min-width: 1280px) {
-  :root {
-    --product-grid: repeat(4, 1fr);
-  }
 }
