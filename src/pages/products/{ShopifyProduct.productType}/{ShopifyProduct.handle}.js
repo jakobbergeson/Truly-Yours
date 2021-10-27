@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx, Flex, Grid } from "theme-ui";
 import * as React from "react";
 import { graphql } from "gatsby";
 import Layout from "../../../components/layout";
@@ -21,6 +23,7 @@ import {
   productImage,
   productDescriptionWrapper,
 } from "./product-page.module.css";
+import { productPageStyles } from "../../../utils";
 
 const Product = ({ data: { product, suggestions } }) => {
   const {
@@ -31,7 +34,6 @@ const Product = ({ data: { product, suggestions } }) => {
     title,
     description,
     images,
-    // images: [firstImage],
   } = product;
 
   const { client } = React.useContext(StoreContext);
@@ -98,28 +100,41 @@ const Product = ({ data: { product, suggestions } }) => {
 
   return (
     <Layout>
-      <div className={container}>
-        <div className={productBox}>
-          <div className={productImageWrapper}>
+      <Flex
+        sx={productPageStyles.productPageWrapper}
+      >
+        <Grid
+          sx={productPageStyles.productBox}
+        >
+          <Flex sx={productPageStyles.productImageWrapper}>
             <GatsbyImage
-              className={productImage}
               objectFit="contain"
               loading="eager"
               alt={variant.title}
               image={variant.image.gatsbyImageData}
             />
-          </div>
-
-          {!hasImages && (
-            <span className={noImagePreview}>No Preview image</span>
-          )}
-          <div className={productDescriptionWrapper}>
-            <h1 className={header}>{title}</h1>
-            <p className={productDescription}>{description}</p>
-            <h2 className={priceValue}>
-              <span>{price}</span>
+          </Flex>
+          <Flex
+            sx={productPageStyles.productDescriptionWrapper}
+          >
+            <h1
+              sx={productPageStyles.productTitle}
+            >
+              {title}
+            </h1>
+            <p
+              sx={productPageStyles.productDescription}
+            >
+              {description}
+            </p>
+            <h2
+              sx={productPageStyles.priceValue}
+            >
+              {price}
             </h2>
-            <fieldset className={optionsWrapper}>
+            <fieldset
+              sx={productPageStyles.optionsWrapper}
+            >
               {hasVariants &&
                 options.map(({ id, name, values }, index) => (
                   <div className={selectVariant} key={id}>
@@ -153,9 +168,9 @@ const Product = ({ data: { product, suggestions } }) => {
                 available={available}
               />
             </div>
-          </div>
-        </div>
-      </div>
+          </Flex>
+        </Grid>
+      </Flex>
     </Layout>
   );
 };

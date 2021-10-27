@@ -60,7 +60,7 @@ const ProductCard = ({ product, eager }) => {
             />
           </div>
         ) : (
-          <div style={{ height: defaultImageHeight, width: defaultImageWidth }} />
+          <div style={{ height: defaultImageHeight, width: defaultImageWidth, }} />
         )
       }
       <div className={productDetailsStyle}>
@@ -85,7 +85,7 @@ export const query = graphql`
     images {
       id
       altText
-      gatsbyImageData(aspectRatio: 1, width: 640)
+      gatsbyImageData(aspectRatio: 1, width: 440)
     }
     priceRangeV2 {
       minVariantPrice {
