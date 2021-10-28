@@ -9,20 +9,6 @@ import { StoreContext } from "../../../context/store-context";
 import AddToCart from "../../../components/add-to-cart";
 import NumericInput from "../../../components/numeric-input";
 import formatPrice from "../../../components/format-price";
-import {
-  productBox,
-  container,
-  header,
-  productImageWrapper,
-  noImagePreview,
-  optionsWrapper,
-  priceValue,
-  selectVariant,
-  addToCartStyle,
-  productDescription,
-  productImage,
-  productDescriptionWrapper,
-} from "./product-page.module.css";
 import { productPageStyles } from "../../../utils";
 
 const Product = ({ data: { product, suggestions } }) => {
@@ -133,26 +119,28 @@ const Product = ({ data: { product, suggestions } }) => {
               {price}
             </h2>
             <fieldset
-              sx={productPageStyles.optionsWrapper}
+              sx={productPageStyles.variantWrapper}
             >
               {hasVariants &&
                 options.map(({ id, name, values }, index) => (
-                  <div className={selectVariant} key={id}>
-                    <select
-                      aria-label="Variants"
-                      onChange={(event) => handleOptionChange(index, event)}
-                    >
-                      <option value="">{`Select ${name}`}</option>
-                      {values.map((value) => (
-                        <option value={value} key={`${name}-${value}`}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
+                  <select
+                    sx={productPageStyles.selectVariant}
+                    key={id}
+                    aria-label="Variants"
+                    onChange={(event) => handleOptionChange(index, event)}
+                  >
+                    <option value="">{`Select ${name}`}</option>
+                    {values.map((value) => (
+                      <option value={value} key={`${name}-${value}`}>
+                        {value}
+                      </option>
+                    ))}
+                  </select>
                 ))}
             </fieldset>
-            <div className={addToCartStyle}>
+            <Grid
+              sx={productPageStyles.addToCart}
+            >
               <NumericInput
                 aria-label="Quantity"
                 onIncrement={() => setQuantity((q) => Math.min(q + 1, 20))}
@@ -167,7 +155,7 @@ const Product = ({ data: { product, suggestions } }) => {
                 quantity={quantity}
                 available={available}
               />
-            </div>
+            </Grid>
           </Flex>
         </Grid>
       </Flex>

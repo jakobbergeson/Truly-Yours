@@ -7,6 +7,8 @@ import { videsoStyles } from "./videoStyles";
 import { artistsStyles } from "./artistsStyles";
 import { blogStyles } from "./blogStyles";
 import { productPageStyles } from "./productPageStyles";
+import { numericInputStyles } from "./numericInputStyles";
+import { addToCartStyles } from "./addToCartStyles";
 
 export {
     layoutStyles,
@@ -18,4 +20,6 @@ export {
     artistsStyles,
     blogStyles,
     productPageStyles,
+    numericInputStyles,
+    addToCartStyles,
 };
