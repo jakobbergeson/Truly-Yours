@@ -1,7 +1,8 @@
+/** @jsx jsx */
+import { jsx } from "theme-ui";
 import * as React from "react";
 import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
-import { wrap, increment, decrement, input } from "./numeric-input.module.css";
-
+import { numericInputStyles } from "../utils";
 const NumericInput = ({
   onIncrement,
   onDecrement,
@@ -10,16 +11,17 @@ const NumericInput = ({
   ...props
 }) => {
   return (
-    <div className={wrap}>
+    <div
+      sx={numericInputStyles.numericWrapper}
+    >
       <input
         disabled={disabled}
         type="numeric"
-        className={[input, className].join(" ")}
+        sx={numericInputStyles.input}
         {...props}
       />
       <button
         disabled={disabled}
-        className={increment}
         aria-label="Increment"
         onClick={onIncrement}
       >
@@ -28,7 +30,6 @@ const NumericInput = ({
       </button>
       <button
         disabled={disabled}
-        className={decrement}
         aria-label="Decrement"
         onClick={onDecrement}
       >

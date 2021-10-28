@@ -1,6 +1,9 @@
+/** @jsx jsx */
+import { jsx } from "theme-ui";
 import * as React from "react";
 import { StoreContext } from "../context/store-context";
-import { addToCart as addToCartStyle } from "./add-to-cart.module.css";
+// import { addToCart as addToCartStyle } from "./add-to-cart.module.css";
+import { addToCartStyles } from '../utils';
 
 const AddToCart = ({ variantId, quantity, available, ...props }) => {
   const { addVariantToCart, loading } = React.useContext(StoreContext);
@@ -13,12 +16,12 @@ const AddToCart = ({ variantId, quantity, available, ...props }) => {
   return (
     <button
       type="submit"
-      className={addToCartStyle}
+      sx={addToCartStyles.addToCart}
       onClick={addToCart}
       disabled={!available || loading}
       {...props}
     >
-      {available ? "Add to Cart" : "Out of Stock"}
+      {available ? "ADD TO CART" : "Out of Stock"}
     </button>
   );
 };
