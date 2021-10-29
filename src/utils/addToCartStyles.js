@@ -1,20 +1,19 @@
 export const addToCartStyles = {
   addToCart: {
-    color: 'inherit',
-    bg: 'darkgray',
+    bg: 'lightgray',
     alignSelf: 'flex-end',
-    p: 3,
+    p: 2,
     border: 'none',
-    borderRadius: '10px',
-    fontSize: 3,
-    fontWeight: 'heading',
+    fontSize: 1,
+    color: 'primary',
+    fontWeight: 'body',
     fontFamily: 'body',
     letterSpacing: 'inherit',
     cursor: 'pointer',
-    transition: 'opacity 450ms',
+    transition: 'all 450ms',
     '&:hover': {
-      transition: 'opacity 125ms',
-      opacity: .75,
+      transition: 'all 125ms',
+      bg: 'tertiary'
     }
   }
 }

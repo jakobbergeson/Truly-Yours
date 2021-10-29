@@ -1,19 +1,19 @@
 export const numericInputStyles = {
   numericWrapper: {
-    display: 'inline-grid',
-    gridTemplateColumns: '1fr min-content',
-    gridTemplateAreas: '"input increment" "input decrement"',
-    bg: 'darkgray',
-    borderRadius: '10px',
+    flexDirection: 'column',
+    alignItems: 'center',
     overflow: 'hidden',
-    fontSize: 4,
+    fontSize: 0,
     'button': {
+      position: 'relative',
+      left: '40%',
+      bottom: '40%',
       border: 'none',
-      p: 1,
+      p: 0,
       display: 'grid',
       placeItems: 'center',
       cursor: 'pointer',
-      fontSize: 'inherit',
+      fontSize: 1,
       transition: 'opacity 450ms',
       '&:hover': {
         transition: 'opacity 125ms',
@@ -25,25 +25,28 @@ export const numericInputStyles = {
       'span': {
         display: ['inline', 'none'],
         p: 0,
-        fontSize: 4
+        fontSize: 'inherit'
       },
       'svg': {
         display: ['none', 'inline'],
         p: 0,
-        fontSize: 4
+        fontSize: 'inherit'
       }
     },
   },
+  inputTitle: {
+    fontSize: 'inherit',
+    fontWeight: 'body',
+    m: 0
+  },
   input: {
-    gridArea: 'input',
     textAlign: 'center',
     p: 2,
-    alignSelf: 'stretch',
-    width: '5ch',
+    width: '100%',
     borderStyle: 'solid',
     borderColor: 'black',
-    borderWidth: ' 0 1px 0 0',
+    borderWidth: '1px',
     fontWeight: 'body',
-    fontSize: 2,
+    fontSize: 1,
   }
 }

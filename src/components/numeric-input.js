@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx, Flex } from "theme-ui";
 import * as React from "react";
 import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
 import { numericInputStyles } from "../utils";
@@ -11,16 +11,21 @@ const NumericInput = ({
   ...props
 }) => {
   return (
-    <div
+    <Flex
       sx={numericInputStyles.numericWrapper}
     >
+      <p
+        sx={numericInputStyles.inputTitle}
+      >
+        QUANTITY
+      </p>
       <input
         disabled={disabled}
         type="numeric"
         sx={numericInputStyles.input}
         {...props}
       />
-      <button
+      {/* <button
         disabled={disabled}
         aria-label="Increment"
         onClick={onIncrement}
@@ -35,8 +40,8 @@ const NumericInput = ({
       >
         <span>-</span>
         <MdArrowDropDown />
-      </button>
-    </div>
+      </button> */}
+    </Flex>
   );
 };
 

@@ -1,15 +1,11 @@
+/** @jsx jsx */
+import { jsx, Flex } from "theme-ui";
 import * as React from "react";
 import { graphql, Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { getShopifyImage } from "gatsby-source-shopify";
 import formatPrice from "./format-price";
-import {
-  productCardStyle,
-  productHeadingStyle,
-  productImageStyle,
-  productDetailsStyle,
-  productPrice,
-} from "./product-card.module.css";
+import { productCardStyles } from "../utils";
 
 const ProductCard = ({ product, eager }) => {
   const {
@@ -46,13 +42,16 @@ const ProductCard = ({ product, eager }) => {
 
   return (
     <Link
-      className={productCardStyle}
+      sx={productCardStyles.productCard}
       to={slug}
       aria-label={`View ${title} product page`}
     >
       {hasImage
         ? (
-          <div className={productImageStyle} data-name="product-image-box">
+          <div
+            sx={productCardStyles.productImage}
+            data-name="product-image-box"
+          >
             <GatsbyImage
               alt={firstImage?.altText ?? title}
               image={firstImage?.gatsbyImageData ?? storefrontImageData}
@@ -60,15 +59,23 @@ const ProductCard = ({ product, eager }) => {
             />
           </div>
         ) : (
-          <div style={{ height: defaultImageHeight, width: defaultImageWidth, }} />
+          <div sx={{ height: defaultImageHeight, width: defaultImageWidth, }} />
         )
       }
-      <div className={productDetailsStyle}>
-        <h2 as="h2" className={productHeadingStyle}>
+      <Flex
+        sx={productCardStyles.productDetail}>
+        <h2
+          as="h2"
+          sx={productCardStyles.productHeading}
+        >
           {title}
         </h2>
-        <div className={productPrice}>{price}</div>
-      </div>
+        <div
+          sx={productCardStyles.productPrice}
+        >
+          {price}
+        </div>
+      </Flex>
     </Link>
   );
 };

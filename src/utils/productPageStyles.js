@@ -6,22 +6,26 @@ export const productPageStyles = {
   },
   productBox: {
     display: 'grid',
-    gridTemplateColumns: [null, null, null, null, '1fr', '1fr 1fr'],
+    gridTemplateColumns: [null, null, null, null, '1fr', '1fr .7fr'],
     gap: 0,
   },
   productImageWrapper: {
+    justifyContent: 'center',
     pl: [0, 0, '55px'],
     pr: [0, 0, '55px'],
     pb: '10px',
     pt: '10px',
-    justifyContent: 'center',
+    maxWidth: [null, '65vw']
   },
   productDescriptionWrapper: {
+    justifySelf: 'center',
+    flexDirection: 'column',
     pl: [0, 0, '55px'],
     pr: [0, 0, '55px'],
     pb: '10px',
     pt: '10px',
-    flexDirection: 'column',
+    textAlign: 'center',
+    maxWidth: [null, '60vw']
   },
   productTitle: {
     fontWeight: 'body',
@@ -41,8 +45,9 @@ export const productPageStyles = {
   variantWrapper: {
     display: 'flex',
     flexDirection: 'column',
+    justifyContent: 'space-between',
     border: 'none',
-    alignItems: 'flex-start',
+    alignItems: 'center',
     marginInlineStart: 0,
     marginInlineEnd: 0,
     paddingBlockStart: 0,
@@ -51,25 +56,25 @@ export const productPageStyles = {
     paddingBlockEnd: 0,
   },
   selectVariant: {
-    bg: 'darkgray',
+    bg: 'lightgray',
     borderStyle: 'none',
-    borderRadius: '10px',
     cursor: 'pointer',
+    color: 'primary',
     mb: 3,
     mt: 0,
-    fontSize: 2,
+    fontSize: 1,
     fontFamily: 'body',
     letterSpacing: '.17em',
-    p: 3,
-    transition: 'opacity 450ms',
+    p: 2,
+    transition: 'all 450ms',
     '&:hover': {
-      transition: 'opacity 125ms',
-      opacity: .75,
+      transition: 'all 125ms',
+      bg: 'tertiary'
     }
   },
   addToCart: {
     display: 'grid',
-    gridTemplateColumns: 'min-content 1fr',
+    gridTemplateColumns: '1fr',
     gap: 3,
   }
 }
