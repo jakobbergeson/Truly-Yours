@@ -40,10 +40,12 @@ const Video = () => {
             >
               <iframe
                 sx={videsoStyles.youtubePlayer}
-                src={node.url}
+                src={
+                  `${node.url}?rel=0&modestbranding=1
+`}
                 title="YouTube video player"
                 frameborder="0"
-                allow="autoplay; encrypted-media;"
+                allow="autoplay;"
                 webkitallowfullscreen="true"
                 mozallowfullscreen="true"
                 allowfullscreen>

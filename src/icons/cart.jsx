@@ -1,12 +1,16 @@
-import * as React from "react"
+/** @jsx jsx */
+import { jsx } from "theme-ui";
+import * as React from "react";
 
 function CartIcon(props) {
   return (
     <svg
-      width={24}
-      height={24}
+      sx={{
+        width: [36, 40],
+        height: [36, 40],
+      }}
       viewBox="0 0 24 24"
-      fill=" rgb(40, 13, 66)"
+      fill='transparent'
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
@@ -22,7 +26,7 @@ function CartIcon(props) {
         strokeWidth={2}
       />
     </svg>
-  )
+  );
 }
 
-export default CartIcon
+export default CartIcon;

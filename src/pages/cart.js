@@ -36,8 +36,7 @@ const CartPage = () => {
           <div className={emptyStateContainer}>
             <h1 className={emptyStateHeading}>Your cart is empty</h1>
             <p>
-              Looks like you haven’t found anything yet. We understand that
-              sometimes it’s hard to choose — maybe this helps:
+              Maybe this helps:
             </p>
             <Link to="/products/" className={emptyStateLink}>
               View products

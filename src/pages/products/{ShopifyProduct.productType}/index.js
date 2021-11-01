@@ -1,11 +1,17 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 import Layout from "../../../components/layout";
+import HeadTag from '../../../components/headTag';
 import { ProductListing } from "../../../components/product-listing";
 
 const Products = ({ data: { products } }) => {
   return (
-    <Layout>
+    <Layout
+      showCart={true}
+    >
+      <HeadTag
+        title={'Shop'}
+      />
       <ProductListing products={products.nodes} />
     </Layout>
   );
