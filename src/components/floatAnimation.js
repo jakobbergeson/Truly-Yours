@@ -7,8 +7,6 @@ const FloatAnimation = (element, delay, angleInitial) => {
 
   const floatDelay = delay + 2;
 
-  console.log("ANGLE INITIAL: ", angleInitial);
-
   let minNumber;
 
   let maxNumber;

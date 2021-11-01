@@ -2,16 +2,17 @@
 import { jsx, Flex, Grid } from "theme-ui";
 import * as React from "react";
 import { graphql } from "gatsby";
-import Layout from "../../../components/layout";
 import isEqual from "lodash.isequal";
 import { GatsbyImage } from "gatsby-plugin-image";
+import Layout from "../../../components/layout";
+import HeadTag from '../../../components/headTag';
 import { StoreContext } from "../../../context/store-context";
 import AddToCart from "../../../components/add-to-cart";
 import NumericInput from "../../../components/numeric-input";
 import formatPrice from "../../../components/format-price";
 import { productPageStyles } from "../../../utils";
 
-const Product = ({ data: { product, suggestions } }) => {
+const Product = ({ data: { product } }) => {
   const {
     options,
     variants,
@@ -85,7 +86,10 @@ const Product = ({ data: { product, suggestions } }) => {
   const hasImages = images.length > 0;
 
   return (
-    <Layout>
+    <Layout
+      showCart={true}
+    >
+      <HeadTag title={title} />
       <Flex
         sx={productPageStyles.productPageWrapper}
       >

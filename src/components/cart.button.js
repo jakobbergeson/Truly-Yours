@@ -1,25 +1,16 @@
+/** @jsx jsx */
+import { jsx } from "theme-ui";
 import * as React from "react";
-import { Link } from "gatsby";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import { cartButton, badge, cartButtonWrapper } from "./cart-button.module.css";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
+import CartIcon from '../icons/cart';
 
-const CartButton = ({ quantity }) => {
+const CartButton = ({ quantity, badge }) => {
   return (
-    <div className={cartButtonWrapper}>
-      <Link
-        aria-label={`Shopping Cart with ${quantity} items`}
-        to="/cart"
-        className={cartButton}
-      >
-        <FontAwesomeIcon
-          icon={faShoppingCart}
-          size="2x"
-        />
-        {quantity > 0 && <div className={badge}>{quantity}</div>}
-      </Link>
-
-    </div>
+    <>
+      <CartIcon />
+      {quantity > 0 && <div className={badge}>{quantity}</div>}
+    </>
   );
 };
 

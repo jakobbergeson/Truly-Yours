@@ -1,16 +1,17 @@
 /** @jsx jsx */
-import { jsx, Flex } from "theme-ui";
-import React, { useState } from "react";
-import Navigation from "./navigation";
-import Footer from "./footer";
-import FadeAnimation from "./fadeAnimation";
-import { layoutStyles } from "../utils";
-import { buttonStyles } from "../utils";
-import { flexStyles } from "../utils";
-import { StaticImage } from "gatsby-plugin-image";
+import { jsx, Flex } from 'theme-ui';
+import React, { useState } from 'react';
+import { StaticImage } from 'gatsby-plugin-image';
+import Navigation from './navigation';
+import Footer from './footer';
+import CartButton from './cart.button';
+import FadeAnimation from './fadeAnimation';
+import { layoutStyles } from '../utils';
+import { buttonStyles } from '../utils';
+import { flexStyles } from '../utils';
 import '../styles/layout.css';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, showCart = false }) => {
 
     const [open, setOpen] = useState(false);
 
@@ -26,15 +27,21 @@ const Layout = ({ children }) => {
                     padding: ['18px', '25px'],
                 }}
                 customStyle={layoutStyles.navLink}
-                to='/products/'
-                direction="right"
+                to={showCart ? '/cart' : '/products/'}
+                direction='right'
                 delay={delay}
-                fadeInOut={true}
-                floatInOut={true}
-                angleInitial={"+"}
+                fadeInOut={showCart ? false : true}
+                floatInOut={showCart ? false : true}
+                angleInitial={'+'}
                 customDelay={delay + .8}
             >
-                SHOP
+                {showCart ?
+                    <CartButton
+                        badge={layoutStyles.badge}
+                    />
+                    :
+                    'SHOP'
+                }
             </Navigation>
             <Navigation
                 themeStyle={{
@@ -44,11 +51,11 @@ const Layout = ({ children }) => {
                 }}
                 customStyle={layoutStyles.navLink}
                 to='/music'
-                direction="left"
+                direction='left'
                 delay={delay}
                 fadeInOut={true}
                 floatInOut={true}
-                angleInitial={"-"}
+                angleInitial={'-'}
                 customDelay={delay + .9}
             >
                 MUSIC
@@ -61,11 +68,11 @@ const Layout = ({ children }) => {
                 }}
                 customStyle={layoutStyles.navLink}
                 to='/video'
-                direction="right"
+                direction='right'
                 delay={delay}
                 fadeInOut={true}
                 floatInOut={true}
-                angleInitial={"-"}
+                angleInitial={'-'}
                 customDelay={delay + .7}
                 open={open}
             >
@@ -80,11 +87,11 @@ const Layout = ({ children }) => {
                 }}
                 customStyle={layoutStyles.navLink}
                 to='/artists'
-                direction="left"
+                direction='left'
                 delay={delay}
                 fadeInOut={true}
                 floatInOut={true}
-                angleInitial={"+"}
+                angleInitial={'+'}
                 customDelay={delay + .75}
                 open={open}
             >
@@ -93,31 +100,31 @@ const Layout = ({ children }) => {
             <Navigation
                 themeStyle={{
                     top: 0,
-                    right: "50%",
+                    right: '50%',
                     mt: -4,
-                    transform: "translateX(50%) translateY(0)",
+                    transform: 'translateX(50%) translateY(0)',
                     padding: 25
                 }}
                 customStyle={layoutStyles.navLink}
                 to='/'
-                direction="down"
+                direction='down'
                 delay={delay}
             >
                 <StaticImage
                     src='../images/Teddy-icon (2).svg'
-                    alt="Home Icon"
+                    alt='Home Icon'
                 />
             </Navigation>
             <button
-                sx={{ bottom: 0, right: "50%", fontSize: 3 }}
+                sx={{ bottom: 0, right: '50%', fontSize: 3 }}
                 style={!open ? buttonStyles.bottomButton : buttonStyles.openFooter}
                 onClick={() => { setOpen(!open); }}
             >
                 +
             </button>
             <FadeAnimation
-                wrapperElement="div"
-                direction="null"
+                wrapperElement='div'
+                direction='null'
                 delay={.5}
             >
                 <Flex
