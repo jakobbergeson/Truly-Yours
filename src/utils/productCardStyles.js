@@ -8,6 +8,9 @@ export const productCardStyles = {
     pb: ['10px', null],
   },
   productImage: {
+    // display: 'flex',
+    // justifyContent: 'stretch',
+    // alignItems: 'center',
     mb: 2,
   },
   productDetail: {

@@ -98,7 +98,6 @@ const Product = ({ data: { product } }) => {
         >
           <Flex sx={productPageStyles.productImageWrapper}>
             <GatsbyImage
-              objectFit="contain"
               loading="eager"
               alt={variant.title}
               image={variant.image.gatsbyImageData}
@@ -193,7 +192,9 @@ export const query = graphql`
       images {
         # altText
         id
-        gatsbyImageData(layout: CONSTRAINED, width: 540 aspectRatio: 1)
+        gatsbyImageData(
+          layout: CONSTRAINED  
+          )
       }
       variants {
         availableForSale

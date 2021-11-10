@@ -5,9 +5,9 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     siteUrl: 'http://localhost:8000/',
-    title: 'Rage Records',
+    title: 'Truly Yours',
     author: 'Jakob Bergeson',
-    description: 'The digital platform for Rage Records.'
+    description: 'The digital platform for Truly Yours.'
   },
   plugins: [
     {
