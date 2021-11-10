@@ -15,7 +15,7 @@ export const productPageStyles = {
     pr: [0, 0, '55px'],
     pb: '10px',
     pt: '10px',
-    maxWidth: [null, '65vw']
+    maxWidth: [null, '65vw'],
   },
   productDescriptionWrapper: {
     justifySelf: 'center',
