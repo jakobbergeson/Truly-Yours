@@ -44,7 +44,7 @@ const Video = () => {
                   `${node.url}?rel=0&modestbranding=1
 `}
                 title="YouTube video player"
-                frameborder="0"
+                frameBorder="0"
                 allow="autoplay;"
                 webkitallowfullscreen="true"
                 mozallowfullscreen="true"

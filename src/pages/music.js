@@ -45,6 +45,7 @@ const Music = () => {
               >
                 <GatsbyImage
                   image={image}
+                  alt={node.title}
                 />
               </Link>
             </li>

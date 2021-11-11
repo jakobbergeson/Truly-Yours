@@ -12,6 +12,7 @@ const AddToCart = ({ variantId, quantity, available, ...props }) => {
     addVariantToCart(variantId, quantity);
   }
 
+
   return (
     <button
       type="submit"

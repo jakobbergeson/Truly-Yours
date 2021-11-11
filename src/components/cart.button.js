@@ -4,10 +4,11 @@ import * as React from "react";
 import CartIcon from '../icons/cart';
 
 const CartButton = ({ quantity, badge }) => {
+
   return (
     <>
       <CartIcon />
-      {quantity > 0 && <div className={badge}>{quantity}</div>}
+      {quantity > 0 && <div sx={badge}>{quantity}</div>}
     </>
   );
 };
