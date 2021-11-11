@@ -5,7 +5,8 @@ import { StaticImage } from 'gatsby-plugin-image';
 import Navigation from './navigation';
 import Footer from './footer';
 import CartButton from './cart.button';
-import FadeAnimation from './fadeAnimation';
+import FadeAnimation from './fadeanimation';
+import { StoreContext } from "../context/store-context";
 import { layoutStyles } from '../utils';
 import { buttonStyles } from '../utils';
 import { flexStyles } from '../utils';
@@ -14,6 +15,14 @@ import '../styles/layout.css';
 const Layout = ({ children, showCart = false }) => {
 
     const [open, setOpen] = useState(false);
+
+    const { checkout } = React.useContext(StoreContext);
+
+    const items = checkout ? checkout.lineItems : [];
+
+    const quantity = items.reduce((total, item) => {
+        return total + item.quantity;
+    }, 0);
 
     const delay = .7;
 
@@ -30,13 +39,14 @@ const Layout = ({ children, showCart = false }) => {
                 to={showCart ? '/cart' : '/products/'}
                 direction='right'
                 delay={delay}
-                fadeInOut={showCart ? false : true}
-                floatInOut={showCart ? false : true}
+                fadeanim={showCart ? null : 'fade'}
+                floatanim={showCart ? null : 'float'}
                 angleInitial={'+'}
                 customDelay={delay + .8}
             >
                 {showCart ?
                     <CartButton
+                        quantity={quantity}
                         badge={layoutStyles.badge}
                     />
                     :
@@ -53,8 +63,8 @@ const Layout = ({ children, showCart = false }) => {
                 to='/music'
                 direction='left'
                 delay={delay}
-                fadeInOut={true}
-                floatInOut={true}
+                fadeanim={'fade'}
+                floatanim={'float'}
                 angleInitial={'-'}
                 customDelay={delay + .9}
             >
@@ -70,8 +80,8 @@ const Layout = ({ children, showCart = false }) => {
                 to='/video'
                 direction='right'
                 delay={delay}
-                fadeInOut={true}
-                floatInOut={true}
+                fadeanim={'fade'}
+                floatanim={'float'}
                 angleInitial={'-'}
                 customDelay={delay + .7}
                 open={open}
@@ -89,8 +99,8 @@ const Layout = ({ children, showCart = false }) => {
                 to='/artists'
                 direction='left'
                 delay={delay}
-                fadeInOut={true}
-                floatInOut={true}
+                fadeanim={'fade'}
+                floatanim={'float'}
                 angleInitial={'+'}
                 customDelay={delay + .75}
                 open={open}

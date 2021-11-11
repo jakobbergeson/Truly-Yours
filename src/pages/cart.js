@@ -24,7 +24,6 @@ import {
 const CartPage = () => {
   const { checkout, loading } = React.useContext(StoreContext);
   const emptyCart = checkout.lineItems.length === 0;
-
   const handleCheckout = () => {
     window.open(checkout.webUrl);
   };

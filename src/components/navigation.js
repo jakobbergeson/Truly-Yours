@@ -1,9 +1,9 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-import React, { useEffect, useRef } from "react";
-import FloatAnimation from "./floatAnimation";
-import { gsap } from "gsap";
-import { Link } from "gatsby";
+import { jsx } from 'theme-ui';
+import React, { useEffect, useRef } from 'react';
+import FloatAnimation from './floatAnimation';
+import { gsap } from 'gsap';
+import { Link } from 'gatsby';
 
 
 const Navigation = ({
@@ -13,8 +13,8 @@ const Navigation = ({
     customStyle,
     direction = null,
     delay = 0,
-    fadeInOut = null,
-    floatInOut = null,
+    fadeanim = null,
+    floatanim = null,
     customDelay,
     open,
     angleInitial,
@@ -28,16 +28,16 @@ const Navigation = ({
     let fadeDirection;
 
     switch (direction) {
-        case "left":
+        case 'left':
             fadeDirection = { x: -distance };
             break;
-        case "right":
+        case 'right':
             fadeDirection = { x: distance };
             break;
-        case "up":
+        case 'up':
             fadeDirection = { y: distance };
             break;
-        case "down":
+        case 'down':
             fadeDirection = { y: -distance };
             break;
         default:
@@ -52,9 +52,9 @@ const Navigation = ({
         });
 
 
-        floatInOut && FloatAnimation(compRef.current, delay, angleInitial);
+        floatanim && FloatAnimation(compRef.current, delay, angleInitial);
 
-        fadeInOut &&
+        fadeanim &&
             gsap.timeline({ repeat: -1, defaults: { duration: customDelay, delay: delay + .7 }, smoothChildTiming: true, reverse: true })
                 .to(compRef.current, { opacity: 1 })
                 .to(compRef.current, { opacity: .01 })
@@ -70,7 +70,8 @@ const Navigation = ({
                 to={to}
                 style={customStyle}
                 ref={compRef}
-                fadeInOut={fadeInOut}
+                fadeanim={fadeanim}
+                floatanim={floatanim}
                 open={open}
                 {...props}
             >
