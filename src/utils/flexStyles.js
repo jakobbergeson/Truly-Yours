@@ -37,6 +37,7 @@ export const flexStyles = {
     bg: 'black',
     opacity: 0.2,
     zIndex: 40,
+    cursor: 'url(/images/cross-cursor.png) 0 0, pointer',
   },
   underlay: {
     height: '100%',

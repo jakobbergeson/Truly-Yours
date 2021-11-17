@@ -31,9 +31,27 @@
 .wrap {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
   padding: 0 var(--size-gutter-raw);
- 
+  min-width: 375px;
+  overflow-y: scroll;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 72px;
+  background-color: transparent;
+}
+
+.chevLeft {
+  cursor: pointer;
+  font-size:x-large;
+  margin-right: 20px;
+}
+
+.cartQuan {
+  color: black;
 }
 
 .totals,
@@ -116,10 +134,8 @@
 
 .emptyStateContainer {
   text-align: center;
-  max-width: 48ch;
   margin-left: auto;
   margin-right: auto;
-  min-height: 50vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -127,17 +143,16 @@
 
 .emptyStateHeading {
   color: var(--text-color);
-  font-size: var(--text-display);
+  font-size: 22px;
   font-weight: var(--bold);
-  margin-bottom: var(--space-lg);
+  margin-bottom: 0;
 }
 
 .emptyStateLink {
   display: inline-block;
   color: var(--primary);
-  font-weight: var(--bold);
-  margin-top: var(--space-xl);
-  font-size: var(--text-xl);
+  margin-top: 0;
+  font-size: 22;
 }
 
 @media (min-width: 640px) {

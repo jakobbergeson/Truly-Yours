@@ -27,7 +27,7 @@ export const buttonStyles = {
     },
     cartButton: {
         position: 'fixed',
-        zIndex: 100,
+        zIndex: 40,
         transition: 'all .8s cubic-bezier(.19,1,.22,1)',
         textDecoration: 'none',
         color: '#333333',

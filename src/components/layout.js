@@ -2,14 +2,12 @@
 import { jsx, Flex } from 'theme-ui';
 import React, { useState } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
-import ReactModal from 'react-modal';
 import Navigation from './navigation';
 import Footer from './footer';
 import CartButton from './cart.button';
 import FadeAnimation from './fadeanimation';
 import { StoreContext } from "../context/store-context";
 import Cart from './cart';
-import Overlay from './overlay';
 import { layoutStyles } from '../utils';
 import { buttonStyles } from '../utils';
 import { flexStyles } from '../utils';
@@ -29,6 +27,10 @@ const Layout = ({ children, showCartButton = false }) => {
     }, 0);
 
     const delay = .7;
+
+    const handleOpenCart = (childLogic) => {
+        setCart(childLogic);
+    };
 
     return (
         <>
@@ -145,7 +147,7 @@ const Layout = ({ children, showCartButton = false }) => {
                 />
             </Navigation>
             <button
-                sx={{ bottom: 0, right: '50%', fontSize: 3 }}
+                sx={{ bottom: 0, right: '50%', fontSize: 4 }}
                 style={!open ? buttonStyles.bottomButton : buttonStyles.openFooter}
                 onClick={() => { setOpen(!open); }}
             >
@@ -170,7 +172,10 @@ const Layout = ({ children, showCartButton = false }) => {
             <div
                 sx={cart ? layoutStyles.cart.open : layoutStyles.cart.closed}
             >
-                <Cart />
+                <Cart
+                    handleOpenCart={handleOpenCart}
+                    quantity={quantity}
+                />
             </div>
 
             <Footer
