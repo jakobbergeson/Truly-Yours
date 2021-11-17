@@ -1,11 +1,17 @@
 import * as React from "react";
 import { Link } from "gatsby";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { StoreContext } from "../context/store-context";
 import LineItem from "./line-item";
 import formatPrice from "./format-price";
 import {
   table,
   wrap,
+  header,
+  chevLeft,
+  cartQuan,
+  cartBadge,
   totals,
   grandTotal,
   summary,
@@ -20,8 +26,10 @@ import {
   title,
 } from "./cart.module.css";
 
-const Cart = () => {
+const Cart = ({ handleOpenCart, quantity }) => {
+
   const { checkout, loading } = React.useContext(StoreContext);
+
   const emptyCart = checkout.lineItems.length === 0;
   const handleCheckout = () => {
     window.open(checkout.webUrl);
@@ -29,79 +37,37 @@ const Cart = () => {
 
   return (
     <div className={wrap}>
+      <div className={header}>
+        <FontAwesomeIcon
+          className={chevLeft}
+          icon={faChevronLeft}
+          onClick={() => { handleOpenCart(false); }}
+        />
+        <p
+          className={cartQuan}>
+          CART
+          [{quantity}]
+        </p>
+      </div>
       {emptyCart ? (
         <div className={emptyStateContainer}>
-          <h1 className={emptyStateHeading}>Your cart is empty</h1>
-          <p>
-            Maybe this helps:
-          </p>
+          <p className={emptyStateHeading}>Your cart is empty.</p>
           <Link to="/products/" className={emptyStateLink}>
             View products
           </Link>
         </div>
       ) : (
         <>
-          <h1 className={title}>Cart</h1>
-          <table className={table}>
-            <thead>
-              <tr>
-                <th className={imageHeader}>Image</th>
-                <th className={productHeader}>Product</th>
-                <th className={collapseColumn}>Price</th>
-                <th>Qty.</th>
-                <th className={[totals, collapseColumn].join(" ")}>Total</th>
-              </tr>
-            </thead>
-            <tbody>
-              {checkout.lineItems.map((item) => (
-                <LineItem item={item} key={item.id} />
-              ))}
-
-              <tr className={summary}>
-                <td className={collapseColumn}></td>
-                <td className={collapseColumn}></td>
-                <td className={collapseColumn}></td>
-                <td className={labelColumn}>Subtotal</td>
-                <td className={totals}>
-                  {formatPrice(
-                    checkout.subtotalPriceV2.currencyCode,
-                    checkout.subtotalPriceV2.amount
-                  )}
-                </td>
-              </tr>
-              <tr className={summary}>
-                <td className={collapseColumn}></td>
-                <td className={collapseColumn}></td>
-                <td className={collapseColumn}></td>
-                <td className={labelColumn}>Taxes</td>
-                <td className={totals}>
-                  {formatPrice(
-                    checkout.totalTaxV2.currencyCode,
-                    checkout.totalTaxV2.amount
-                  )}
-                </td>
-              </tr>
-              <tr className={summary}>
-                <td className={collapseColumn}></td>
-                <td className={collapseColumn}></td>
-                <td className={collapseColumn}></td>
-                <td className={labelColumn}>Shipping</td>
-                <td className={totals}>Calculated at checkout</td>
-              </tr>
-              <tr className={grandTotal}>
-                <td className={collapseColumn}></td>
-                <td className={collapseColumn}></td>
-                <td className={collapseColumn}></td>
-                <td className={labelColumn}>Total Price</td>
-                <td className={totals}>
-                  {formatPrice(
-                    checkout.totalPriceV2.currencyCode,
-                    checkout.totalPriceV2.amount
-                  )}
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <div className={[totals, collapseColumn].join(" ")}>Total</div>
+          {checkout.lineItems.map((item) => (
+            <LineItem item={item} key={item.id} />
+          ))}
+          <div className={totals}>
+            {formatPrice(
+              checkout.subtotalPriceV2.currencyCode,
+              checkout.subtotalPriceV2.amount
+            )}
+          </div>
           <button
             onClick={handleCheckout}
             disabled={loading}
