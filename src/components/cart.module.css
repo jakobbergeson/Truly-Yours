@@ -33,6 +33,7 @@
   flex-direction: column;
   align-items: stretch;
   padding: 0 var(--size-gutter-raw);
+ 
 }
 
 .totals,

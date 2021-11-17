@@ -1,10 +1,9 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui';
 import React, { useEffect, useRef } from 'react';
-import FloatAnimation from './floatAnimation';
 import { gsap } from 'gsap';
 import { Link } from 'gatsby';
-
+import FloatAnimation from './floatAnimation';
 
 const Navigation = ({
     children,

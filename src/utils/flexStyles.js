@@ -12,6 +12,7 @@ export const flexStyles = {
     mr: [0, 0, '75px',],
     transition: 'transform .8s cubic-bezier(.19,1,.22,1)',
     animation: 'b 1.5s ease',
+    opacity: 1
   },
   openFooter: {
     transform: "translateY(-250px)",
@@ -27,4 +28,24 @@ export const flexStyles = {
     mr: [null, 0, '75px',],
     transition: 'transform .8s cubic-bezier(.19,1,.22,1)',
   },
+  overlay: {
+    minHeight: '100%',
+    width: '100%',
+    position: 'fixed',
+    willChange: 'opacity',
+    transition: 'opacity .8s cubic-bezier(.19,1,.22,1)',
+    bg: 'black',
+    opacity: 0.2,
+    zIndex: 40,
+  },
+  underlay: {
+    height: '100%',
+    width: '100%',
+    position: 'fixed',
+    willChange: 'opacity',
+    transition: 'opacity .8s cubic-bezier(.19,1,.22,1)',
+    bg: 'black',
+    opacity: 0,
+    zIndex: -1,
+  }
 }
