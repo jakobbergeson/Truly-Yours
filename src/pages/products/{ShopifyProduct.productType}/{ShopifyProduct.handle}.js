@@ -87,7 +87,7 @@ const Product = ({ data: { product } }) => {
 
   return (
     <Layout
-      showCart={true}
+      showCartButton={true}
     >
       <HeadTag title={title} />
       <Flex

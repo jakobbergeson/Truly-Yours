@@ -2,19 +2,23 @@
 import { jsx, Flex } from 'theme-ui';
 import React, { useState } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
+import ReactModal from 'react-modal';
 import Navigation from './navigation';
 import Footer from './footer';
 import CartButton from './cart.button';
 import FadeAnimation from './fadeanimation';
 import { StoreContext } from "../context/store-context";
+import Cart from './cart';
+import Overlay from './overlay';
 import { layoutStyles } from '../utils';
 import { buttonStyles } from '../utils';
 import { flexStyles } from '../utils';
 import '../styles/layout.css';
 
-const Layout = ({ children, showCart = false }) => {
+const Layout = ({ children, showCartButton = false }) => {
 
     const [open, setOpen] = useState(false);
+    const [cart, setCart] = useState(false);
 
     const { checkout } = React.useContext(StoreContext);
 
@@ -26,33 +30,48 @@ const Layout = ({ children, showCart = false }) => {
 
     const delay = .7;
 
-
     return (
         <>
-            <Navigation
-                themeStyle={{
-                    top: 0,
-                    right: 0,
-                    padding: ['18px', '25px'],
-                }}
-                customStyle={layoutStyles.navLink}
-                to={showCart ? '/cart' : '/products/'}
-                direction='right'
-                delay={delay}
-                fadeanim={showCart ? null : 'fade'}
-                floatanim={showCart ? null : 'float'}
-                angleInitial={'+'}
-                customDelay={delay + .8}
-            >
-                {showCart ?
-                    <CartButton
-                        quantity={quantity}
-                        badge={layoutStyles.badge}
-                    />
-                    :
-                    'SHOP'
-                }
-            </Navigation>
+            {!showCartButton ?
+                <Navigation
+                    themeStyle={{
+                        top: 0,
+                        right: 0,
+                        padding: ['18px', '25px'],
+                    }}
+                    customStyle={layoutStyles.navLink}
+                    to='/products/'
+                    direction='right'
+                    delay={delay}
+                    fadeanim={'fade'}
+                    floatanim={'float'}
+                    angleInitial={'+'}
+                    customDelay={delay + .8}
+                >
+                    SHOP
+                </Navigation>
+                :
+                <button
+                    onClick={() => setCart(!cart)}
+                    sx={{
+                        top: 0,
+                        right: 0,
+                        padding: ['18px', '25px'],
+                    }}
+                    style={buttonStyles.cartButton}
+                >
+                    <FadeAnimation
+                        wrapperElement='div'
+                        direction='right'
+                        delay={delay}
+                    >
+                        <CartButton
+                            quantity={quantity}
+                            badge={buttonStyles.cartButton.badge}
+                        />
+                    </FadeAnimation>
+                </button>
+            }
             <Navigation
                 themeStyle={{
                     top: 0,
@@ -137,12 +156,23 @@ const Layout = ({ children, showCart = false }) => {
                 direction='null'
                 delay={.5}
             >
+                <div sx={cart ? flexStyles.overlay : flexStyles.underlay}
+                    onClick={() => { setCart(false); }}
+
+                />
                 <Flex
-                    sx={!open ? flexStyles.main : flexStyles.openFooter}
+                    sx={open ? flexStyles.openFooter : flexStyles.main}
                 >
                     {children}
                 </Flex>
             </FadeAnimation>
+
+            <div
+                sx={cart ? layoutStyles.cart.open : layoutStyles.cart.closed}
+            >
+                <Cart />
+            </div>
+
             <Footer
                 open={open}
             />

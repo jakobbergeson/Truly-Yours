@@ -7,7 +7,7 @@ import { ProductListing } from "../../../components/product-listing";
 const Products = ({ data: { products } }) => {
   return (
     <Layout
-      showCart={true}
+      showCartButton={true}
     >
       <HeadTag
         title={'Shop'}
