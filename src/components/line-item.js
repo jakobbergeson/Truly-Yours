@@ -12,6 +12,7 @@ import {
   variant,
   totals,
   priceColumn,
+  lineWrap,
 } from "./line-item.module.css";
 
 const LineItem = ({ item }) => {
@@ -80,29 +81,26 @@ const LineItem = ({ item }) => {
   );
 
   return (
-    <tr>
-      <td>
-        {image && (
-          <GatsbyImage
-            key={variantImage.src}
-            image={image}
-            alt={variantImage.altText ?? item.variant.title}
-          />
-        )}
-      </td>
-      <td>
-        <h2 className={title}>{item.title}</h2>
+    <div
+      className={lineWrap}
+    >
+      <div>
+        <div>
+          {image && (
+            <GatsbyImage
+              key={variantImage.src}
+              image={image}
+              alt={variantImage.altText ?? item.variant.title}
+            />
+          )}
+        </div>
         <div className={variant}>
+          <p className={title}>{item.title}</p>
           {item.variant.title === "Default Title" ? "" : item.variant.title}
+
         </div>
-        <div className={remove}>
-          <button onClick={handleRemove}>
-            <DeleteIcon /> Remove
-          </button>
-        </div>
-      </td>
-      <td className={priceColumn}>{price}</td>
-      <td>
+      </div>
+      <div>
         <NumericInput
           disabled={loading}
           value={quantity}
@@ -111,9 +109,14 @@ const LineItem = ({ item }) => {
           onDecrement={doDecrement}
           onChange={(e) => handleQuantityChange(e.currentTarget.value)}
         />
-      </td>
-      <td className={totals}>{subtotal}</td>
-    </tr>
+      </div>
+      <div className={remove}>
+        <button onClick={handleRemove}>
+          Remove
+        </button>
+      </div>
+
+    </div>
   );
 };
 

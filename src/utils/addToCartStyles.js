@@ -4,7 +4,7 @@ export const addToCartStyles = {
     alignSelf: 'flex-end',
     p: 2,
     border: 'none',
-    fontSize: 1,
+    fontSize: '16px',
     color: 'primary',
     fontWeight: 'body',
     fontFamily: 'body',

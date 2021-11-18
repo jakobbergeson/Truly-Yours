@@ -62,7 +62,7 @@ export const productPageStyles = {
     color: 'primary',
     mb: 3,
     mt: 0,
-    fontSize: 1,
+    fontSize: '16px',
     fontFamily: 'body',
     letterSpacing: '.17em',
     p: 2,
