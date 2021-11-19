@@ -23,15 +23,10 @@ export const numericInputStyles = {
         bg: 'lightgray',
       },
       'span': {
-        display: ['inline', 'none'],
+        display: ['inline'],
         p: 0,
         fontSize: 'inherit'
       },
-      'svg': {
-        display: ['none', 'inline'],
-        p: 0,
-        fontSize: 'inherit'
-      }
     },
   },
   inputTitle: {

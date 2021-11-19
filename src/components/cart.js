@@ -6,24 +6,17 @@ import { StoreContext } from "../context/store-context";
 import LineItem from "./line-item";
 import formatPrice from "./format-price";
 import {
-  table,
   wrap,
+  cartBox,
   header,
   chevLeft,
   cartQuan,
-  cartBadge,
-  totals,
-  grandTotal,
-  summary,
+  checkoutBox,
   checkoutButton,
-  collapseColumn,
-  labelColumn,
-  imageHeader,
-  productHeader,
   emptyStateContainer,
   emptyStateHeading,
   emptyStateLink,
-  title,
+  disclaimer,
 } from "./cart.module.css";
 
 const Cart = ({ handleOpenCart, quantity }) => {
@@ -35,48 +28,59 @@ const Cart = ({ handleOpenCart, quantity }) => {
     window.open(checkout.webUrl);
   };
 
+  console.log("CHECKOUT: ", checkout);
+
   return (
     <div className={wrap}>
       <div className={header}>
-        <FontAwesomeIcon
-          className={chevLeft}
-          icon={faChevronLeft}
-          onClick={() => { handleOpenCart(false); }}
-        />
+        <div className={chevLeft}>
+          <FontAwesomeIcon
+            icon={faChevronLeft}
+            onClick={() => { handleOpenCart(false); }}
+          />
+        </div>
         <p
           className={cartQuan}>
           CART
           [{quantity}]
         </p>
       </div>
-      {emptyCart ? (
-        <div className={emptyStateContainer}>
-          <p className={emptyStateHeading}>Your cart is empty.</p>
-          <Link to="/products/" className={emptyStateLink}>
-            View products
-          </Link>
-        </div>
-      ) : (
-        <>
-          <div className={[totals, collapseColumn].join(" ")}>Total</div>
-          {checkout.lineItems.map((item) => (
-            <LineItem item={item} key={item.id} />
-          ))}
-          <div className={totals}>
-            {formatPrice(
-              checkout.subtotalPriceV2.currencyCode,
-              checkout.subtotalPriceV2.amount
-            )}
+      <div className={cartBox}>
+        {emptyCart ? (
+          <div className={emptyStateContainer}>
+            <p className={emptyStateHeading}>Your cart is empty.</p>
+            <Link to="/products/" className={emptyStateLink}>
+              View products
+            </Link>
           </div>
-          <button
-            onClick={handleCheckout}
-            disabled={loading}
-            className={checkoutButton}
-          >
-            Checkout
-          </button>
-        </>
-      )}
+        ) : (
+          <>
+            {checkout.lineItems.map((item) => (
+              <LineItem item={item} key={item.id} />
+            ))}
+          </>
+        )}
+      </div>
+      <div
+        className={checkoutBox}
+      >
+        <p
+          className={disclaimer}
+        >
+          Shipping & taxes calculated at checkout
+        </p>
+        <button
+          onClick={handleCheckout}
+          disabled={loading}
+          className={checkoutButton}
+        >
+          Checkout • {formatPrice(
+            checkout.subtotalPriceV2.currencyCode,
+            checkout.subtotalPriceV2.amount
+          )}
+
+        </button>
+      </div>
     </div>
   );
 };

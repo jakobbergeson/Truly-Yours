@@ -9,9 +9,14 @@ import NumericInput from "./numeric-input";
 import {
   title,
   remove,
-  variant,
+  lineVariant,
+  lineImage,
+  lineInfo,
+  lineQuan,
+  linePrice,
   totals,
   priceColumn,
+  lineWrap,
 } from "./line-item.module.css";
 
 const LineItem = ({ item }) => {
@@ -80,8 +85,12 @@ const LineItem = ({ item }) => {
   );
 
   return (
-    <tr>
-      <td>
+    <div
+      className={lineWrap}
+    >
+      <div
+        className={lineImage}
+      >
         {image && (
           <GatsbyImage
             key={variantImage.src}
@@ -89,31 +98,37 @@ const LineItem = ({ item }) => {
             alt={variantImage.altText ?? item.variant.title}
           />
         )}
-      </td>
-      <td>
-        <h2 className={title}>{item.title}</h2>
-        <div className={variant}>
-          {item.variant.title === "Default Title" ? "" : item.variant.title}
+      </div>
+      <div className={lineInfo}>
+        <div className={lineVariant}>
+          <div>
+            <p className={title}>{item.title}</p>
+            {item.variant.title === "Default Title" ? "" : item.variant.title}
+          </div>
+          <p
+            className={linePrice}
+          >
+            {price}
+          </p>
         </div>
-        <div className={remove}>
-          <button onClick={handleRemove}>
-            <DeleteIcon /> Remove
-          </button>
+        <div className={lineQuan}>
+          <NumericInput
+            width='88px'
+            display='none'
+            value={quantity}
+            aria-label="Quantity"
+            onIncrement={doIncrement}
+            onDecrement={doDecrement}
+            onChange={(e) => handleQuantityChange(e.currentTarget.value)}
+          />
+          <div className={remove}>
+            <button onClick={handleRemove}>
+              Remove
+            </button>
+          </div>
         </div>
-      </td>
-      <td className={priceColumn}>{price}</td>
-      <td>
-        <NumericInput
-          disabled={loading}
-          value={quantity}
-          aria-label="Quantity"
-          onIncrement={doIncrement}
-          onDecrement={doDecrement}
-          onChange={(e) => handleQuantityChange(e.currentTarget.value)}
-        />
-      </td>
-      <td className={totals}>{subtotal}</td>
-    </tr>
+      </div>
+    </div>
   );
 };
 
