@@ -33,11 +33,12 @@ const Cart = ({ handleOpenCart, quantity }) => {
   return (
     <div className={wrap}>
       <div className={header}>
-        <FontAwesomeIcon
-          className={chevLeft}
-          icon={faChevronLeft}
-          onClick={() => { handleOpenCart(false); }}
-        />
+        <div className={chevLeft}>
+          <FontAwesomeIcon
+            icon={faChevronLeft}
+            onClick={() => { handleOpenCart(false); }}
+          />
+        </div>
         <p
           className={cartQuan}>
           CART

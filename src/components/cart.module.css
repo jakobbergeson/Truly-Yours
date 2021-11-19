@@ -1,11 +1,12 @@
 .wrap {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  min-height: 100%;
   color: #333333;
 }
 
 .cartBox {
+  height: 100vh;
   overflow-y: scroll;
   padding: 0 20px;
 }
@@ -15,8 +16,11 @@
   justify-content: flex-start;
   align-items: center;
   padding: 0 20px;
+  position: sticky;
+  background: white;
+  z-index: 60;
+  top: 0;
   min-height: 72px;
-  background-color: transparent;
   box-shadow: 0 3px 30px rgb(0 0 0 / 8%);
 }
 
@@ -25,6 +29,14 @@
   font-size:x-large;
   margin-right: 20px;
   color: red;
+  transition: opacity 450ms;
+  will-change: opacity;
+}
+
+.chevLeft:hover {
+  transition: opacity 125ms;
+  opacity: .5;
+  will-change: opacity;
 }
 
 .cartQuan {
@@ -40,14 +52,14 @@
   align-items: center;
   display: flex;
   padding: 20px;
-  background-color:transparent;
+  background-color:white;
   box-shadow: rgb(0 0 0 / 8%) 0px -3px 30px;
 }
 
 .disclaimer {
   margin-block-start: 0;
   margin-block-end: 20px;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .checkoutButton {
@@ -98,6 +110,12 @@
   color: var(--primary);
   margin-top: 0;
   font-size: 22;
+}
+
+@media screen and (max-width: 400px) {
+  .wrap {
+    width: 100%;
+  }
 }
 
 

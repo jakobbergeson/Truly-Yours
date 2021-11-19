@@ -9,7 +9,11 @@ import NumericInput from "./numeric-input";
 import {
   title,
   remove,
-  variant,
+  lineVariant,
+  lineImage,
+  lineInfo,
+  lineQuan,
+  linePrice,
   totals,
   priceColumn,
   lineWrap,
@@ -84,38 +88,46 @@ const LineItem = ({ item }) => {
     <div
       className={lineWrap}
     >
-      <div>
-        <div>
-          {image && (
-            <GatsbyImage
-              key={variantImage.src}
-              image={image}
-              alt={variantImage.altText ?? item.variant.title}
-            />
-          )}
+      <div
+        className={lineImage}
+      >
+        {image && (
+          <GatsbyImage
+            key={variantImage.src}
+            image={image}
+            alt={variantImage.altText ?? item.variant.title}
+          />
+        )}
+      </div>
+      <div className={lineInfo}>
+        <div className={lineVariant}>
+          <div>
+            <p className={title}>{item.title}</p>
+            {item.variant.title === "Default Title" ? "" : item.variant.title}
+          </div>
+          <p
+            className={linePrice}
+          >
+            {price}
+          </p>
         </div>
-        <div className={variant}>
-          <p className={title}>{item.title}</p>
-          {item.variant.title === "Default Title" ? "" : item.variant.title}
-
+        <div className={lineQuan}>
+          <NumericInput
+            width='88px'
+            display='none'
+            value={quantity}
+            aria-label="Quantity"
+            onIncrement={doIncrement}
+            onDecrement={doDecrement}
+            onChange={(e) => handleQuantityChange(e.currentTarget.value)}
+          />
+          <div className={remove}>
+            <button onClick={handleRemove}>
+              Remove
+            </button>
+          </div>
         </div>
       </div>
-      <div>
-        <NumericInput
-          disabled={loading}
-          value={quantity}
-          aria-label="Quantity"
-          onIncrement={doIncrement}
-          onDecrement={doDecrement}
-          onChange={(e) => handleQuantityChange(e.currentTarget.value)}
-        />
-      </div>
-      <div className={remove}>
-        <button onClick={handleRemove}>
-          Remove
-        </button>
-      </div>
-
     </div>
   );
 };

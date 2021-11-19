@@ -1,40 +1,79 @@
-.title {
-  font-size: 16px;
-  font-weight: var(--semibold);
-  margin: 0;
-}
 
 .lineWrap {
   box-sizing: border-box;
-    margin: 0px;
-    min-width: 0px;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    -webkit-box-align: center;
-    align-items: center;
-    display: flex;
-    border-bottom: 1px solid rgb(122, 122, 122);
-    padding: 20px 0;
-    overflow: hidden;
+  margin: 0px;
+  min-width: 0px;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  border-bottom: 1px solid rgb(122, 122, 122);
+  padding: 20px 0;
+  overflow: hidden;
 }
 
-.variant {
+.lineImage {
+  margin: 0px 20px 0px 0px;
+  height: 120px;
+  width: 96px;
+  object-fit: cover;
+}
+
+.lineInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.lineVariant {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  text-transform: capitalize;
+  padding-bottom: var(--space-sm);
+}
+
+.title {
   font-size: 14px;
+  font-weight: var(--semibold);
+  max-width: 150px;
+  margin: 0 15px 0 0;
+}
+
+.linePrice {
+  margin: 0px 0px 26px;
+  min-width: 0px;
+  flex-direction: column;
+  display: flex;
+  min-height: 44px;
+  font-size: 14px;
+}
+
+.lineQuan {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
   text-transform: capitalize;
   padding-bottom: var(--space-sm);
 }
 
 .remove button {
   font-family: inherit;
-  font-size: 16px;
+  font-size: 13px;
   letter-spacing:.17em;
+  color: red;
   border-style: none;
   background-color: transparent;
   cursor: pointer;
+  transition: opacity 450ms;
+  will-change: opacity;
 }
 
 .remove button:hover {
-  opacity: .5;
+  will-change: opacity;
+  transition: opacity 325ms;
+  opacity: .6;
 }
 
 .totals {
