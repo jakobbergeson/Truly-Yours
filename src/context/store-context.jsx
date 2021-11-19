@@ -88,7 +88,7 @@ export const StoreProvider = ({ children }) => {
         setCheckout(res);
         setLoading(false);
         setDidJustAddToCart(true);
-        setTimeout(() => setDidJustAddToCart(false), 3000);
+        setTimeout(() => setDidJustAddToCart(false), 2000);
       });
   };
 

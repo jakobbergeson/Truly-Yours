@@ -1,7 +1,6 @@
 
 .lineWrap {
   box-sizing: border-box;
-  margin: 0px;
   min-width: 0px;
   -webkit-box-pack: justify;
   justify-content: space-between;
@@ -33,10 +32,13 @@
   padding-bottom: var(--space-sm);
 }
 
+.lineDesc {
+  max-width: 150px;
+}
+
 .title {
   font-size: 14px;
   font-weight: var(--semibold);
-  max-width: 150px;
   margin: 0 15px 0 0;
 }
 
