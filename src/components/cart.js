@@ -7,11 +7,12 @@ import LineItem from "./line-item";
 import formatPrice from "./format-price";
 import {
   wrap,
-  cartBox,
+  scrollBox,
   header,
   chevLeft,
   cartQuan,
   checkoutBox,
+  lineItemBox,
   checkoutButton,
   emptyStateContainer,
   emptyStateHeading,
@@ -24,11 +25,14 @@ const Cart = ({ handleOpenCart, quantity }) => {
   const { checkout, loading } = React.useContext(StoreContext);
 
   const emptyCart = checkout.lineItems.length === 0;
+
   const handleCheckout = () => {
     window.open(checkout.webUrl);
   };
 
   console.log("CHECKOUT: ", checkout);
+  console.log("LOADING: ", loading);
+
 
   return (
     <div className={wrap}>
@@ -45,21 +49,24 @@ const Cart = ({ handleOpenCart, quantity }) => {
           [{quantity}]
         </p>
       </div>
-      <div className={cartBox}>
-        {emptyCart ? (
-          <div className={emptyStateContainer}>
-            <p className={emptyStateHeading}>Your cart is empty.</p>
-            <Link to="/products/" className={emptyStateLink}>
-              View products
-            </Link>
-          </div>
-        ) : (
-          <>
-            {checkout.lineItems.map((item) => (
-              <LineItem item={item} key={item.id} />
-            ))}
-          </>
-        )}
+      <div className={scrollBox}>
+        <div className={lineItemBox} >
+
+          {emptyCart ? (
+            <div className={emptyStateContainer}>
+              <p className={emptyStateHeading}>Your cart is empty.</p>
+              <Link to="/products/" className={emptyStateLink}>
+                View products
+              </Link>
+            </div>
+          ) : (
+            <>
+              {checkout.lineItems.map((item) => (
+                <LineItem item={item} key={item.id} />
+              ))}
+            </>
+          )}
+        </div>
       </div>
       <div
         className={checkoutBox}
@@ -74,15 +81,16 @@ const Cart = ({ handleOpenCart, quantity }) => {
           disabled={loading}
           className={checkoutButton}
         >
-          Checkout • {formatPrice(
-            checkout.subtotalPriceV2.currencyCode,
-            checkout.subtotalPriceV2.amount
-          )}
-
+          Checkout • {
+            checkout.subtotalPriceV2 &&
+            formatPrice(
+              checkout.subtotalPriceV2.currencyCode,
+              checkout.subtotalPriceV2.amount
+            )
+          }
         </button>
       </div>
     </div>
   );
 };
-
 export default Cart;

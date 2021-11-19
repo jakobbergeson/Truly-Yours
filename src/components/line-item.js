@@ -14,8 +14,7 @@ import {
   lineInfo,
   lineQuan,
   linePrice,
-  totals,
-  priceColumn,
+  lineDesc,
   lineWrap,
 } from "./line-item.module.css";
 
@@ -101,7 +100,7 @@ const LineItem = ({ item }) => {
       </div>
       <div className={lineInfo}>
         <div className={lineVariant}>
-          <div>
+          <div className={lineDesc}>
             <p className={title}>{item.title}</p>
             {item.variant.title === "Default Title" ? "" : item.variant.title}
           </div>
@@ -113,6 +112,7 @@ const LineItem = ({ item }) => {
         </div>
         <div className={lineQuan}>
           <NumericInput
+            disabled={loading}
             width='88px'
             display='none'
             value={quantity}
