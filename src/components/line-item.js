@@ -1,22 +1,13 @@
+/** @jsx jsx */
+import { jsx } from 'theme-ui';
 import * as React from "react";
 import debounce from "lodash.debounce";
 import { StoreContext } from "../context/store-context";
 import formatPrice from "./format-price";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { getShopifyImage } from "gatsby-source-shopify";
-import DeleteIcon from "../icons/delete";
 import NumericInput from "./numeric-input";
-import {
-  title,
-  remove,
-  lineVariant,
-  lineImage,
-  lineInfo,
-  lineQuan,
-  linePrice,
-  lineDesc,
-  lineWrap,
-} from "./line-item.module.css";
+import { lineItemStyles } from "../utils";
 
 const LineItem = ({ item }) => {
   const {
@@ -85,10 +76,10 @@ const LineItem = ({ item }) => {
 
   return (
     <div
-      className={lineWrap}
+      sx={lineItemStyles.lineWrap}
     >
       <div
-        className={lineImage}
+        sx={lineItemStyles.lineImage}
       >
         {image && (
           <GatsbyImage
@@ -98,19 +89,19 @@ const LineItem = ({ item }) => {
           />
         )}
       </div>
-      <div className={lineInfo}>
-        <div className={lineVariant}>
-          <div className={lineDesc}>
-            <p className={title}>{item.title}</p>
+      <div sx={lineItemStyles.lineInfo}>
+        <div sx={lineItemStyles.lineVariant}>
+          <div sx={lineItemStyles.lineDesc}>
+            <p sx={lineItemStyles.title}>{item.title}</p>
             {item.variant.title === "Default Title" ? "" : item.variant.title}
           </div>
           <p
-            className={linePrice}
+            sx={lineItemStyles.linePrice}
           >
             {price}
           </p>
         </div>
-        <div className={lineQuan}>
+        <div sx={lineItemStyles.lineQuan}>
           <NumericInput
             disabled={loading}
             width='88px'
@@ -121,11 +112,12 @@ const LineItem = ({ item }) => {
             onDecrement={doDecrement}
             onChange={(e) => handleQuantityChange(e.currentTarget.value)}
           />
-          <div className={remove}>
-            <button onClick={handleRemove}>
-              Remove
-            </button>
-          </div>
+          <button
+            sx={lineItemStyles.remove}
+            onClick={handleRemove}
+          >
+            Remove
+          </button>
         </div>
       </div>
     </div>

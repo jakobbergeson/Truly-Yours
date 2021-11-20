@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx } from 'theme-ui';
 import * as React from "react";
 import { Link } from "gatsby";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -5,20 +7,7 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { StoreContext } from "../context/store-context";
 import LineItem from "./line-item";
 import formatPrice from "./format-price";
-import {
-  wrap,
-  scrollBox,
-  header,
-  chevLeft,
-  cartQuan,
-  checkoutBox,
-  lineItemBox,
-  checkoutButton,
-  emptyStateContainer,
-  emptyStateHeading,
-  emptyStateLink,
-  disclaimer,
-} from "./cart.module.css";
+import { cartStyles } from "../utils";
 
 const Cart = ({ handleOpenCart, quantity }) => {
 
@@ -35,27 +24,27 @@ const Cart = ({ handleOpenCart, quantity }) => {
 
 
   return (
-    <div className={wrap}>
-      <div className={header}>
-        <div className={chevLeft}>
+    <div sx={cartStyles.wrap}>
+      <div sx={cartStyles.header}>
+        <div sx={cartStyles.chevLeft}>
           <FontAwesomeIcon
             icon={faChevronLeft}
             onClick={() => { handleOpenCart(false); }}
           />
         </div>
         <p
-          className={cartQuan}>
+          sx={cartStyles.cartQuan}>
           CART
           [{quantity}]
         </p>
       </div>
-      <div className={scrollBox}>
-        <div className={lineItemBox} >
+      <div sx={cartStyles.scrollBox}>
+        <div sx={cartStyles.lineItemBox} >
 
           {emptyCart ? (
-            <div className={emptyStateContainer}>
-              <p className={emptyStateHeading}>Your cart is empty.</p>
-              <Link to="/products/" className={emptyStateLink}>
+            <div sx={cartStyles.emptyStateContainer}>
+              <p sx={cartStyles.emptyStateHeading}>Your cart is empty.</p>
+              <Link to="/products/" sx={cartStyles.emptyStateLink}>
                 View products
               </Link>
             </div>
@@ -69,17 +58,17 @@ const Cart = ({ handleOpenCart, quantity }) => {
         </div>
       </div>
       <div
-        className={checkoutBox}
+        sx={cartStyles.checkoutBox}
       >
         <p
-          className={disclaimer}
+          sx={cartStyles.disclaimer}
         >
           Shipping & taxes calculated at checkout
         </p>
         <button
           onClick={handleCheckout}
           disabled={loading}
-          className={checkoutButton}
+          sx={cartStyles.checkoutButton}
         >
           Checkout • {
             checkout.subtotalPriceV2 &&

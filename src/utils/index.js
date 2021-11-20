@@ -11,6 +11,8 @@ import { numericInputStyles } from './numericInputStyles';
 import { addToCartStyles } from './addToCartStyles';
 import { productCardStyles } from './productCardStyles';
 import { productListingStyles } from './productListingStyles';
+import { cartStyles } from './cartStyles';
+import { lineItemStyles } from './lineItemStyles';
 
 export {
     layoutStyles,
@@ -26,4 +28,6 @@ export {
     addToCartStyles,
     productCardStyles,
     productListingStyles,
+    cartStyles,
+    lineItemStyles,
 };
