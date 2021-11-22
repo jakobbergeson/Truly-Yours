@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Flex } from 'theme-ui';
-import React, { useState } from 'react';
+import React, { useState, createContext } from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 import Navigation from './navigation';
 import Footer from './footer';
@@ -13,7 +13,11 @@ import { buttonStyles } from '../utils';
 import { flexStyles } from '../utils';
 import '../styles/layout.css';
 
-const Layout = ({ children, showCartButton = false }) => {
+const OpenCart = {};
+
+export const CartContext = createContext(OpenCart);
+
+const Layout = ({ children, showCartButton = false, }) => {
 
     const [open, setOpen] = useState(false);
     const [cart, setCart] = useState(false);
@@ -31,6 +35,7 @@ const Layout = ({ children, showCartButton = false }) => {
     const handleOpenCart = (childLogic) => {
         setCart(childLogic);
     };
+
 
     return (
         <>
@@ -165,7 +170,11 @@ const Layout = ({ children, showCartButton = false }) => {
                 <Flex
                     sx={open ? flexStyles.openFooter : flexStyles.main}
                 >
-                    {children}
+                    <CartContext.Provider
+                        value={handleOpenCart}
+                    >
+                        {children}
+                    </CartContext.Provider>
                 </Flex>
             </FadeAnimation>
 

@@ -1,27 +1,39 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import * as React from "react";
+import React, { useContext } from "react";
 import { StoreContext } from "../context/store-context";
+import { CartContext } from "./layout";
 import { addToCartStyles } from '../utils';
 
 const AddToCart = ({ variantId, quantity, available, ...props }) => {
-  const { addVariantToCart, loading } = React.useContext(StoreContext);
+
+  const { addVariantToCart, loading } = useContext(StoreContext);
+  const handleOpenCart = useContext(CartContext);
+
+  function clickHandler(e) {
+    addToCart(e);
+    openCartHandler(e);
+  }
 
   function addToCart(e) {
     e.preventDefault();
     addVariantToCart(variantId, quantity);
   }
 
+  function openCartHandler(e) {
+    e.preventDefault();
+    handleOpenCart(true);
+  }
 
   return (
     <button
       type="submit"
       sx={addToCartStyles.addToCart}
-      onClick={addToCart}
+      onClick={clickHandler}
       disabled={!available || loading}
       {...props}
     >
-      {available ? "ADD TO BAG" : "Out of Stock"}
+      {available ? "ADD TO CART" : "Out of Stock"}
     </button>
   );
 };

@@ -9,8 +9,10 @@ const NumericInput = ({
   disabled,
   display = 'block',
   width = 'auto',
+  value,
   ...props
 }) => {
+
   return (
     <Flex
       sx={numericInputStyles.numericWrapper}
@@ -31,6 +33,7 @@ const NumericInput = ({
         disabled={disabled}
         type="numeric"
         sx={numericInputStyles.input}
+        value={value}
         {...props}
       />
       {/* <button

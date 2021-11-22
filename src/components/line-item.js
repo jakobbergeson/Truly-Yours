@@ -16,7 +16,13 @@ const LineItem = ({ item }) => {
     updateLineItem,
     loading,
   } = React.useContext(StoreContext);
+
+  // console.log("item: ", item);
+
   const [quantity, setQuantity] = React.useState(item.quantity);
+
+  // console.log(" LINE ITEM QUANTITY: ", quantity);
+
 
   const variantImage = {
     ...item.variant.image,
@@ -50,6 +56,7 @@ const LineItem = ({ item }) => {
     setQuantity(value);
     if (Number(value) >= 1) {
       debouncedUli(value);
+      console.log("VALUE :", value);
     }
   };
 
@@ -110,7 +117,7 @@ const LineItem = ({ item }) => {
             aria-label="Quantity"
             onIncrement={doIncrement}
             onDecrement={doDecrement}
-            onChange={(e) => handleQuantityChange(e.currentTarget.value)}
+            onChange={(event) => handleQuantityChange(event.currentTarget.value)}
           />
           <button
             sx={lineItemStyles.remove}
