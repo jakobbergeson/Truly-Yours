@@ -4,7 +4,7 @@ import Layout from "../../../components/layout";
 import HeadTag from '../../../components/headTag';
 import { ProductListing } from "../../../components/product-listing";
 
-const Products = ({ data: { products } }) => {
+const Products = ({ data: { products }, }) => {
   return (
     <Layout
       showCartButton={true}

@@ -23,6 +23,7 @@ const Product = ({ data: { product } }) => {
     images,
   } = product;
 
+
   const { client } = React.useContext(StoreContext);
 
   const [variant, setVariant] = React.useState({ ...initialVariant });
