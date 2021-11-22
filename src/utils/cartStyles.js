@@ -16,6 +16,15 @@ export const cartStyles = {
     flexDirection: 'column',
     display: 'flex',
     paddingBottom: '235px',
+    willChange: 'padding-bottom',
+    transition: 'padding-bottom .8s cubic-bezier(.19,1,.22,1)',
+  },
+  lineItemBoxOpen: {
+    flexDirection: 'column',
+    display: 'flex',
+    paddingBottom: 'calc(235px + 250px)',
+    willChange: 'padding-bottom',
+    transition: 'padding-bottom .8s cubic-bezier(.19,1,.22,1)',
   },
   header: {
     display: 'flex',
@@ -59,6 +68,22 @@ export const cartStyles = {
     padding: '20px',
     bg: 'white',
     boxShadow: 'rgb(0 0 0 / 8%) 0px -3px 30px',
+    willChange: 'transform',
+    transition: 'transform .8s cubic-bezier(.19,1,.22,1)',
+  },
+  checkoutBoxOpen: {
+    position: 'fixed',
+    bottom: '0px',
+    left: '0px',
+    right: '0px',
+    flexDirection: 'column',
+    display: 'flex',
+    padding: '20px',
+    bg: 'white',
+    boxShadow: 'rgb(0 0 0 / 8%) 0px -3px 30px',
+    transform: "translateY(-250px)",
+    willChange: 'transform',
+    transition: 'transform .8s cubic-bezier(.19,1,.22,1)',
   },
 
   disclaimer: {
@@ -68,7 +93,6 @@ export const cartStyles = {
   },
 
   checkoutButton: {
-    alignItems: 'center',
     bg: 'rgb(194, 194, 194)',
     minWidth: '200px',
     borderStyle: 'none',
@@ -101,7 +125,7 @@ export const cartStyles = {
 
   emptyStateHeading: {
     color: '#333333',
-    fontSize: '22px',
+    fontSize: '20px',
     fontWeight: 'bold',
     mb: 0,
   },
@@ -110,7 +134,7 @@ export const cartStyles = {
     display: 'inline-block',
     color: 'red',
     mt: 0,
-    fontSize: 22,
+    fontSize: '18px',
     transition: 'opacity 450ms',
     willChange: 'opacity',
     opacity: 1,
@@ -121,4 +145,28 @@ export const cartStyles = {
     }
   },
 
+  emptyStateButton: {
+    bg: 'rgb(194, 194, 194)',
+    minWidth: '200px',
+    textDecoration: 'none',
+    textAlign: 'center',
+    lineHeight: 'normal',
+    borderStyle: 'none',
+    color: 'white',
+    fontFamily: 'inherit',
+    fontSize: 'inherit',
+    letterSpacing: '.17em',
+    width: '100%',
+    padding: '12px',
+    cursor: 'pointer',
+    transition: 'all .8s cubic-bezier(.19, 1, .22, 1)',
+    border: '1px transparent solid',
+    fontSize: '16px',
+    '&:hover': {
+      color: 'text',
+      bg: 'transparent',
+      transition: 'all .8s cubic-bezier(.19, 1, .22, 1)',
+      border: '1px #333333 solid',
+    }
+  },
 }
