@@ -9,7 +9,7 @@ import LineItem from "./line-item";
 import formatPrice from "./format-price";
 import { cartStyles } from "../utils";
 
-const Cart = ({ handleOpenCart, quantity }) => {
+const Cart = ({ handleOpenCart, quantity, open }) => {
 
   const { checkout, loading } = React.useContext(StoreContext);
 
@@ -39,7 +39,7 @@ const Cart = ({ handleOpenCart, quantity }) => {
         </p>
       </div>
       <div sx={cartStyles.scrollBox}>
-        <div sx={cartStyles.lineItemBox} >
+        <div sx={open ? cartStyles.lineItemBoxOpen : cartStyles.lineItemBox} >
 
           {emptyCart ? (
             <div sx={cartStyles.emptyStateContainer}>
@@ -58,26 +58,36 @@ const Cart = ({ handleOpenCart, quantity }) => {
         </div>
       </div>
       <div
-        sx={cartStyles.checkoutBox}
+        sx={open ? cartStyles.checkoutBoxOpen : cartStyles.checkoutBox}
       >
         <p
           sx={cartStyles.disclaimer}
         >
           Shipping & taxes calculated at checkout
         </p>
-        <button
-          onClick={handleCheckout}
-          disabled={loading}
-          sx={cartStyles.checkoutButton}
-        >
-          Checkout • {
-            checkout.subtotalPriceV2 &&
-            formatPrice(
-              checkout.subtotalPriceV2.currencyCode,
-              checkout.subtotalPriceV2.amount
-            )
-          }
-        </button>
+        {emptyCart ? (
+          <Link
+            to='/products/'
+            sx={cartStyles.emptyStateButton}
+          >
+            Shop Now
+          </Link>
+
+        ) : (
+          <button
+            onClick={handleCheckout}
+            disabled={loading}
+            sx={cartStyles.checkoutButton}
+          >
+            Checkout • {
+              checkout.subtotalPriceV2 &&
+              formatPrice(
+                checkout.subtotalPriceV2.currencyCode,
+                checkout.subtotalPriceV2.amount
+              )
+            }
+          </button>
+        )}
       </div>
     </div>
   );

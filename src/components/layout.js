@@ -175,6 +175,7 @@ const Layout = ({ children, showCartButton = false }) => {
                 <Cart
                     handleOpenCart={handleOpenCart}
                     quantity={quantity}
+                    open={open}
                 />
             </div>
 
