@@ -19,10 +19,6 @@ const Cart = ({ handleOpenCart, quantity, open }) => {
     window.open(checkout.webUrl);
   };
 
-  console.log("CHECKOUT: ", checkout);
-  console.log("LOADING: ", loading);
-
-
   return (
     <div sx={cartStyles.wrap}>
       <div sx={cartStyles.header}>
