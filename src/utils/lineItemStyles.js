@@ -12,8 +12,8 @@ export const lineItemStyles = {
   },
   lineImage: {
     m: '0px 20px 0px 0px',
-    height: '120px',
-    width: '96px',
+    height: '100px',
+    width: '100px',
     objectFit: 'cover',
   },
   lineInfo: {
@@ -25,7 +25,6 @@ export const lineItemStyles = {
     justifyContent: 'space-between',
     fontSize: '13px',
     textTransform: 'capitalize',
-    pb: 4,
   },
   lineDesc: {
     maxWidth: '150px',
@@ -33,7 +32,7 @@ export const lineItemStyles = {
   title: {
     fontSize: '14px',
     fontWeight: 'heading',
-    margin: '0 15px 0 0',
+    margin: '0 25px 0 0',
   },
   linePrice: {
     m: '0px 0px 26px',

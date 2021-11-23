@@ -40,7 +40,11 @@ const Cart = ({ handleOpenCart, quantity, open }) => {
           {emptyCart ? (
             <div sx={cartStyles.emptyStateContainer}>
               <p sx={cartStyles.emptyStateHeading}>Your cart is empty.</p>
-              <Link to="/products/" sx={cartStyles.emptyStateLink}>
+              <Link
+                to="/products/"
+                sx={cartStyles.emptyStateLink}
+                onClick={() => { handleOpenCart(false); }}
+              >
                 View products
               </Link>
             </div>
@@ -65,6 +69,7 @@ const Cart = ({ handleOpenCart, quantity, open }) => {
           <Link
             to='/products/'
             sx={cartStyles.emptyStateButton}
+            onClick={() => { handleOpenCart(false); }}
           >
             Shop Now
           </Link>

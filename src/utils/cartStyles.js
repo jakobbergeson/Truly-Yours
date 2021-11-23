@@ -34,7 +34,7 @@ export const cartStyles = {
     position: 'sticky',
     background: 'white',
     zIndex: 60,
-    top: 0,
+    // top: 0,
     minHeight: '72px',
     boxShadow: '0 3px 30px rgb(0 0 0 / 8%)',
   },

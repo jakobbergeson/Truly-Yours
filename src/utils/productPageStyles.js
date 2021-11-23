@@ -6,8 +6,8 @@ export const productPageStyles = {
   },
   productBox: {
     display: 'grid',
-    gridTemplateColumns: [null, null, null, null, '1fr', '1fr .7fr'],
-    gap: 0,
+    gridTemplateColumns: [null, null, null, null, '1fr', '1fr 1fr'],
+    gap: [0, 0, 0, 0, 0, 100],
   },
   productImageWrapper: {
     justifyContent: 'center',
