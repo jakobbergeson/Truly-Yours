@@ -17,17 +17,17 @@ const LineItem = ({ item }) => {
     loading,
   } = React.useContext(StoreContext);
 
-  // console.log("item: ", item);
-
   const [quantity, setQuantity] = React.useState(item.quantity);
 
-  // console.log(" LINE ITEM QUANTITY: ", quantity);
-
+  React.useEffect(() => {
+    setQuantity(item.quantity);
+  }, [item.quantity]);
 
   const variantImage = {
     ...item.variant.image,
     originalSrc: item.variant.image.src,
   };
+
   const price = formatPrice(
     item.variant.priceV2.currencyCode,
     Number(item.variant.priceV2.amount)
@@ -56,7 +56,6 @@ const LineItem = ({ item }) => {
     setQuantity(value);
     if (Number(value) >= 1) {
       debouncedUli(value);
-      console.log("VALUE :", value);
     }
   };
 
@@ -117,7 +116,7 @@ const LineItem = ({ item }) => {
             aria-label="Quantity"
             onIncrement={doIncrement}
             onDecrement={doDecrement}
-            onChange={(event) => handleQuantityChange(event.currentTarget.value)}
+            onChange={(e) => handleQuantityChange(e.currentTarget.value)}
           />
           <button
             sx={lineItemStyles.remove}

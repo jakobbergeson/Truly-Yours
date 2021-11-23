@@ -21,8 +21,8 @@ const ProductCard = ({ product, eager }) => {
     priceRangeV2.minVariantPrice.amount
   );
 
-  const defaultImageHeight = 200;
-  const defaultImageWidth = 200;
+  const defaultImageHeight = 500;
+  const defaultImageWidth = 500;
   let storefrontImageData = {};
   if (storefrontImages) {
     const storefrontImage = storefrontImages.edges[0].node;
@@ -92,7 +92,7 @@ export const query = graphql`
     images {
       id
       altText
-      gatsbyImageData(aspectRatio: 1, width: 440)
+      gatsbyImageData(aspectRatio: 1, width: 500)
     }
     priceRangeV2 {
       minVariantPrice {
