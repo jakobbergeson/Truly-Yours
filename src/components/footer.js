@@ -5,10 +5,10 @@ import { graphql, useStaticQuery, Link } from "gatsby";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { findIconDefinition, icon } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { fas } from "@fortawesome/free-brands-svg-icons";
+import { fab } from "@fortawesome/free-brands-svg-icons";
 import { footerStyles } from "../utils";
 
-// library.add(fas);
+library.add(fab);
 
 const Footer = ({ open }) => {
 
@@ -43,7 +43,7 @@ const Footer = ({ open }) => {
                 >
                     {data.allContentfulFooter.edges.map(({ node }) => {
 
-                        {/* const Icon = findIconDefinition({ prefix: 'fas', iconName: `${node.icon}` }); */ }
+
 
                         return (
                             <li
@@ -57,10 +57,10 @@ const Footer = ({ open }) => {
                                         m: 4
                                     }}
                                 >
-                                    {/* <FontAwesomeIcon
-                                        icon={}
+                                    <FontAwesomeIcon
+                                        icon={['fab', node.icon]}
                                         sx={footerStyles.socialIcons}
-                                    /> */}
+                                    />
                                 </a>
                             </li>
 
