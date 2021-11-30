@@ -29,6 +29,7 @@ const Artists = () => {
           }
           galleryPictures{
             gatsbyImageData(width: 600)
+            title
           }
           blogPostTitle
           slug
@@ -58,6 +59,7 @@ const Artists = () => {
             >
               <GatsbyImage
                 image={bannerImage}
+                alt={node.artistName}
               />
             </Flex>
             <Flex
@@ -70,6 +72,7 @@ const Artists = () => {
               >
                 <GatsbyImage
                   image={galleryImage1}
+                  alt={node.galleryPictures[0].title}
                 />
               </button>}
               {galleryImage2 && <button
@@ -78,6 +81,7 @@ const Artists = () => {
               >
                 <GatsbyImage
                   image={galleryImage2}
+                  alt={node.galleryPictures[1].title}
                 />
               </button>}
               {galleryImage3 && <button
@@ -86,6 +90,7 @@ const Artists = () => {
               >
                 <GatsbyImage
                   image={galleryImage3}
+                  alt={node.galleryPictures[2].title}
                 />
               </button>}
             </Flex>
@@ -118,7 +123,10 @@ const Artists = () => {
               shouldCloseOnOverlayClick={true}
               style={artistsStyles.modal}
             >
-              <GatsbyImage image={galleryImage1} />
+              <GatsbyImage
+                image={galleryImage1}
+                alt={node.galleryPictures[0].title}
+              />
             </ReactModal>
             <ReactModal
               closeTimeoutMS={300}
@@ -129,6 +137,7 @@ const Artists = () => {
             >
               <GatsbyImage
                 image={galleryImage2}
+                alt={node.galleryPictures[1].title}
               />
             </ReactModal>
             <ReactModal
@@ -138,12 +147,14 @@ const Artists = () => {
               shouldCloseOnOverlayClick={true}
               style={artistsStyles.modal}
             >
-              <GatsbyImage image={galleryImage3} />
+              <GatsbyImage
+                image={galleryImage3}
+                alt={node.galleryPictures[2].title}
+              />
             </ReactModal>
           </Flex>
         );
-      })
-      }
+      })}
     </Layout>
   );
 };

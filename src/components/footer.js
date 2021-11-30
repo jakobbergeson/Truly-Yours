@@ -3,7 +3,6 @@ import { jsx, Flex } from "theme-ui";
 import * as React from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { findIconDefinition, icon } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { fab } from "@fortawesome/free-brands-svg-icons";
 import { footerStyles } from "../utils";
@@ -19,6 +18,7 @@ const Footer = ({ open }) => {
 				node{
 					url
                     icon
+                    id
                 }
             }
         }
@@ -42,7 +42,6 @@ const Footer = ({ open }) => {
                     sx={footerStyles.socialList}
                 >
                     {data.allContentfulFooter.edges.map(({ node }) => {
-
 
 
                         return (

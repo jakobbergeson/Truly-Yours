@@ -54,6 +54,7 @@ const Album = ({ data }) => {
         >
           <GatsbyImage
             image={image}
+            alt={data.contentfulAlbum.title}
           />
           <ol
             sx={albumStyles.tracklist}

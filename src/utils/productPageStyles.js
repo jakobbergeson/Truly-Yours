@@ -9,7 +9,7 @@ export const productPageStyles = {
     display: 'flex',
     textDecoration: 'none',
     position: ['sticky', 'fixed'],
-    top: '110px',
+    top: '102px',
     color: 'inherit',
     transition: 'opacity 450ms',
     willChange: 'opacity',
