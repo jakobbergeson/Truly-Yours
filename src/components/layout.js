@@ -1,11 +1,12 @@
 /** @jsx jsx */
 import { jsx, Flex } from 'theme-ui';
 import React, { useState, createContext } from 'react';
-import { StaticImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { graphql, useStaticQuery } from 'gatsby';
 import Navigation from './navigation';
 import Footer from './footer';
 import CartButton from './cart.button';
-import FadeAnimation from './fadeanimation';
+import FadeAnimation from './fadeAnimation';
 import { StoreContext } from "../context/store-context";
 import Cart from './cart';
 import { layoutStyles } from '../utils';
@@ -36,6 +37,23 @@ const Layout = ({ children, showCartButton = false, }) => {
         setCart(childLogic);
     };
 
+    const data = useStaticQuery(graphql`
+    query {
+        allContentfulHomeIcon {
+                edges {
+                    node {
+                        icon {
+                            gatsbyImageData
+                        }
+                        title
+                    }
+                }
+            }
+        }
+    `);
+
+    const homeIcon = getImage(data.allContentfulHomeIcon.edges[0].node.icon);
+    const homeIconAlt = data.allContentfulHomeIcon.edges[0].node.title;
 
     return (
         <>
@@ -137,19 +155,20 @@ const Layout = ({ children, showCartButton = false, }) => {
                 themeStyle={{
                     top: 0,
                     right: '50%',
-                    mt: -4,
+                    mt: 2,
                     transform: 'translateX(50%) translateY(0)',
-                    padding: 25,
-                    pb: 0
+                    // padding: 25,
+                    pb: 0,
+                    maxWidth: ['90px', '105px'],
                 }}
                 customStyle={layoutStyles.navLink}
                 to='/'
                 direction='down'
                 delay={delay}
             >
-                <StaticImage
-                    src='../images/Teddy-icon (2).svg'
-                    alt='Home Icon'
+                <GatsbyImage
+                    image={homeIcon}
+                    alt={homeIconAlt}
                 />
             </Navigation>
             <button

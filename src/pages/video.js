@@ -48,7 +48,7 @@ const Video = () => {
                 allow="autoplay;"
                 webkitallowfullscreen="true"
                 mozallowfullscreen="true"
-                allowfullscreen>
+                allowFullScreen>
               </iframe>
             </li>
           );
