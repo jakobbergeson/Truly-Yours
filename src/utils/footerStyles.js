@@ -34,6 +34,14 @@ export const footerStyles = {
         justifyContent: 'center',
         alignItems: 'center',
     },
+    socialList: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        listStyle: 'none',
+        p: 0,
+    },
     socialIcons: {
         color: 'white',
         fontSize: [5, 6, null, null, null, null, null, 7],

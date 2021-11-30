@@ -3,11 +3,33 @@ export const productPageStyles = {
     maxWidth: '1280px',
     justifyContent: 'center',
     alignItems: 'center',
+    flexDirection: 'column',
+  },
+  shopLink: {
+    display: 'flex',
+    textDecoration: 'none',
+    position: ['sticky', 'fixed'],
+    top: '110px',
+    color: 'inherit',
+    transition: 'opacity 450ms',
+    willChange: 'opacity',
+    opacity: 1,
+    '&:hover': {
+      transition: 'opacity 125ms',
+      willChange: 'opacity',
+      opacity: .5,
+    },
+    header: {
+      mt: 0,
+      mb: 0,
+      ml: 2
+    }
   },
   productBox: {
     display: 'grid',
     gridTemplateColumns: [null, null, null, null, '1fr', '1fr 1fr'],
     gap: [0, 0, 0, 0, 0, 100],
+    pt: ['20px', 0],
   },
   productImageWrapper: {
     justifyContent: 'center',
@@ -31,7 +53,8 @@ export const productPageStyles = {
     fontWeight: 'body',
     mt: 0,
     mr: 'auto',
-    ml: 'auto'
+    ml: 'auto',
+    mb: [0, 'inherit'],
   },
   productDescription: {
     marginBlockStart: 0,
@@ -41,6 +64,7 @@ export const productPageStyles = {
     fontWeight: 'body',
     ml: 'auto',
     mr: 'auto',
+    mb: '16px',
   },
   variantWrapper: {
     display: 'flex',

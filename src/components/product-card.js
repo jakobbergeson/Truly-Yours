@@ -73,7 +73,7 @@ const ProductCard = ({ product, eager }) => {
         <div
           sx={productCardStyles.productPrice}
         >
-          {price}
+          <p>{price}</p>
         </div>
       </Flex>
     </Link>

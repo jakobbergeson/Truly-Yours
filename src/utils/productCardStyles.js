@@ -8,9 +8,6 @@ export const productCardStyles = {
     pb: ['10px', null],
   },
   productImage: {
-    // display: 'flex',
-    // justifyContent: 'stretch',
-    // alignItems: 'center',
     mb: 2,
   },
   productDetail: {
@@ -23,11 +20,17 @@ export const productCardStyles = {
   productHeading: {
     width: '100%',
     fontSize: 3,
+    mt: 0,
+    mb: [1, 'inherit'],
     textAlign: 'center',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
   },
   productPrice: {
-    color: 'inherit'
+    color: 'inherit',
+    m: 0,
+    'p': {
+      m: 0,
+    }
   }
 }

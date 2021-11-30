@@ -1,8 +1,10 @@
 /** @jsx jsx */
 import { jsx, Flex, Grid } from "theme-ui";
 import * as React from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import isEqual from "lodash.isequal";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { GatsbyImage } from "gatsby-plugin-image";
 import Layout from "../../../components/layout";
 import HeadTag from '../../../components/headTag';
@@ -94,6 +96,19 @@ const Product = ({ data: { product } }) => {
       <Flex
         sx={productPageStyles.productPageWrapper}
       >
+        <Link
+          to='/products/'
+          sx={productPageStyles.shopLink}
+        >
+          <FontAwesomeIcon
+            icon={faChevronLeft}
+          />
+          <h6
+            sx={productPageStyles.shopLink.header}
+          >
+            SHOP
+          </h6>
+        </Link>
         <Grid
           sx={productPageStyles.productBox}
         >
