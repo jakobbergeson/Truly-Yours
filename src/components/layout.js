@@ -139,7 +139,8 @@ const Layout = ({ children, showCartButton = false, }) => {
                     right: '50%',
                     mt: -4,
                     transform: 'translateX(50%) translateY(0)',
-                    padding: 25
+                    padding: 25,
+                    pb: 0
                 }}
                 customStyle={layoutStyles.navLink}
                 to='/'

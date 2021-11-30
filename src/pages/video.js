@@ -41,8 +41,8 @@ const Video = () => {
               <iframe
                 sx={videsoStyles.youtubePlayer}
                 src={
-                  `${node.url}?rel=0&modestbranding=1
-`}
+                  `https://www.youtube.com/embed/${node.url}?rel=0&modestbranding=1
+                `}
                 title="YouTube video player"
                 frameBorder="0"
                 allow="autoplay;"

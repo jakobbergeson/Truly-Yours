@@ -2,18 +2,26 @@
 import { jsx, Flex } from "theme-ui";
 import * as React from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { findIconDefinition, icon } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faTwitter,
-    faYoutube,
-    faInstagram,
-} from "@fortawesome/free-brands-svg-icons";
+import { fas } from "@fortawesome/free-brands-svg-icons";
 import { footerStyles } from "../utils";
+
+// library.add(fas);
 
 const Footer = ({ open }) => {
 
     const data = useStaticQuery(graphql`
     query {
+        allContentfulFooter(sort: { fields: publishedDate, order: DESC }) {
+			edges{
+				node{
+					url
+                    icon
+                }
+            }
+        }
       site {
         siteMetadata {
           title
@@ -30,45 +38,35 @@ const Footer = ({ open }) => {
             <Flex
                 sx={footerStyles.socialBox}
             >
-                <a
-                    href="https://www.instagram.com/"
-                    target="_blank"
-                    rel="noreferrer"
-                    sx={{
-                        m: 4
-                    }}
+                <ul
+                    sx={footerStyles.socialList}
                 >
-                    <FontAwesomeIcon
-                        icon={faInstagram}
-                        sx={footerStyles.socialIcons}
-                    />
-                </a>
-                <a
-                    href="https://www.youtube.com/"
-                    target="_blank"
-                    rel="noreferrer"
-                    sx={{
-                        m: 4
-                    }}
-                >
-                    <FontAwesomeIcon
-                        icon={faYoutube}
-                        sx={footerStyles.socialIcons}
-                    />
-                </a>
-                <a
-                    href="https://www.twitter.com/"
-                    target="_blank"
-                    rel="noreferrer"
-                    sx={{
-                        m: 4
-                    }}
-                >
-                    <FontAwesomeIcon
-                        icon={faTwitter}
-                        sx={footerStyles.socialIcons}
-                    />
-                </a>
+                    {data.allContentfulFooter.edges.map(({ node }) => {
+
+                        {/* const Icon = findIconDefinition({ prefix: 'fas', iconName: `${node.icon}` }); */ }
+
+                        return (
+                            <li
+                                key={node.id}
+                            >
+                                <a
+                                    href={node.url}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    sx={{
+                                        m: 4
+                                    }}
+                                >
+                                    {/* <FontAwesomeIcon
+                                        icon={}
+                                        sx={footerStyles.socialIcons}
+                                    /> */}
+                                </a>
+                            </li>
+
+                        );
+                    })}
+                </ul>
             </Flex>
             <Flex
                 sx={footerStyles.bottomBox}>
