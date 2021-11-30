@@ -6,7 +6,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Navigation from './navigation';
 import Footer from './footer';
 import CartButton from './cart.button';
-import FadeAnimation from './fadeanimation';
+import FadeAnimation from './fadeAnimation';
 import { StoreContext } from "../context/store-context";
 import Cart from './cart';
 import { layoutStyles } from '../utils';
