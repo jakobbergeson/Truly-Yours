@@ -157,7 +157,6 @@ const Layout = ({ children, showCartButton = false, }) => {
                     right: '50%',
                     mt: 2,
                     transform: 'translateX(50%) translateY(0)',
-                    // padding: 25,
                     pb: 0,
                     maxWidth: ['90px', '105px'],
                 }}
@@ -178,15 +177,15 @@ const Layout = ({ children, showCartButton = false, }) => {
             >
                 +
             </button>
+            <div sx={cart ? flexStyles.overlay : flexStyles.underlay}
+                onClick={() => { setCart(false); }}
+
+            />
             <FadeAnimation
                 wrapperElement='div'
                 direction='null'
                 delay={.5}
             >
-                <div sx={cart ? flexStyles.overlay : flexStyles.underlay}
-                    onClick={() => { setCart(false); }}
-
-                />
                 <Flex
                     sx={open ? flexStyles.openFooter : flexStyles.main}
                 >
