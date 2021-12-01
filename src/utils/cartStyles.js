@@ -98,7 +98,6 @@ export const cartStyles = {
     borderStyle: 'none',
     color: 'white',
     fontFamily: 'inherit',
-    fontSize: 'inherit',
     letterSpacing: '.17em',
     width: '100%',
     padding: '12px',
