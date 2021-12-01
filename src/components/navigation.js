@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { Link } from 'gatsby';
 import FloatAnimation from './floatAnimation';
+import FadeAnimation from './fadeAnimation';
 
 const Navigation = ({
     children,
@@ -74,7 +75,13 @@ const Navigation = ({
                 open={open}
                 {...props}
             >
-                {children}
+                <FadeAnimation
+                    wrapperElement='div'
+                    direction='null'
+                    delay={.4}
+                >
+                    {children}
+                </FadeAnimation>
             </Link>
         </>
 
