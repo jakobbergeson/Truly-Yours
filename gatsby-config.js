@@ -25,6 +25,14 @@ module.exports = {
         shopifyConnections: ['collections'],
       },
     },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['serif:200,300,400,500,600,700,800', 'Cinzel:200,300,400,500,600,700,800', ' Roboto',]
+        }
+      }
+    },
     'gatsby-plugin-theme-ui',
     'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
@@ -43,7 +51,7 @@ module.exports = {
       options: {
         name: `rage-records`,
         start_url: `/`,
-        icon: `src/images/Teddy-icon (2).png`,
+        icon: `src/images/Teddy-Favicon.png`,
       },
     },
   ],
