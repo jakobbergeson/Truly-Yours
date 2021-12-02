@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Flex } from 'theme-ui';
 import React, { useState, createContext } from 'react';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage, StaticImage } from 'gatsby-plugin-image';
 import { graphql, useStaticQuery } from 'gatsby';
 import Navigation from './navigation';
 import Footer from './footer';
@@ -165,10 +165,14 @@ const Layout = ({ children, showCartButton = false, }) => {
                 direction='down'
                 delay={delay}
             >
-                <GatsbyImage
+                <StaticImage
+                    src='../images/Teddy-icon(1).png'
+                    alt='Teddy Icon'
+                />
+                {/* <GatsbyImage
                     image={homeIcon}
                     alt={homeIconAlt}
-                />
+                /> */}
             </Navigation>
             <button
                 sx={{ bottom: 0, right: '50%', fontSize: 4 }}
