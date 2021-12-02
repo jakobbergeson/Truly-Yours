@@ -78,7 +78,7 @@ const Navigation = ({
                 <FadeAnimation
                     wrapperElement='div'
                     direction='null'
-                    delay={.4}
+                    delay={.2}
                 >
                     {children}
                 </FadeAnimation>
