@@ -184,7 +184,7 @@ const Layout = ({ children, showCartButton = false, }) => {
             <FadeAnimation
                 wrapperElement='div'
                 direction='null'
-                delay={.5}
+                delay={.7}
             >
                 <Flex
                     sx={open ? flexStyles.openFooter : flexStyles.main}
