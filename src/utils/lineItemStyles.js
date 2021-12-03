@@ -27,7 +27,7 @@ export const lineItemStyles = {
     textTransform: 'capitalize',
   },
   lineDesc: {
-    maxWidth: '150px',
+    maxWidth: ['150px', '150px', '150px', '400px', '150px'],
   },
   title: {
     fontSize: '14px',
@@ -59,6 +59,7 @@ export const lineItemStyles = {
     borderStyle: 'none',
     bg: 'transparent',
     cursor: 'pointer',
+    p: 0,
     transition: 'opacity 450ms',
     willChange: 'opacity',
     '&:hover': {
