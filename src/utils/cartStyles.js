@@ -5,7 +5,7 @@ export const cartStyles = {
     minHeight: '100%',
     color: 'text',
     minWidth: '375px',
-    width: ['100%', '100%', '100%', '100vw', 'inherit']
+    width: ['100vw', '100vw', '100vw', '100vw', 'inherit']
   },
   scrollBox: {
     height: '100vh',
