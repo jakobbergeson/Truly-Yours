@@ -29,7 +29,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['serif:200,300,400,500,600,700,800', 'Cinzel:200,300,400,500,600,700,800', ' Roboto',]
+          families: ['Serif:200,300,400,500,600,700,800', 'Cinzel:200,300,400,500,600,700,800', ' Roboto',]
         }
       }
     },
