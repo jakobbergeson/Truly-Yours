@@ -27,7 +27,7 @@ export const lineItemStyles = {
     textTransform: 'capitalize',
   },
   lineDesc: {
-    maxWidth: ['150px', '150px', '150px', '400px', '150px'],
+    maxWidth: ['250px', '250px', '300px', '400px', '150px'],
   },
   title: {
     fontSize: '14px',

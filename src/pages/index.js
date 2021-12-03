@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx, Image } from "theme-ui";
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { graphql, useStaticQuery } from 'gatsby';
 import Layout from "../components/layout";
@@ -9,17 +9,19 @@ const IndexPage = () => {
 
   const data = useStaticQuery(graphql`
     query {
-        allContentfulHome {
-                edges {
-                    node {
-                        homeImage {
-                            gatsbyImageData
-                        }
-                        title
-                    }
-                }
+      allContentfulHome {
+        edges {
+          node {
+            title
+            homeImage {
+              fluid {
+                src
+              }
             }
+          }
         }
+      }
+    }
     `);
 
   const homePicture = getImage(data.allContentfulHome.edges[0].node.homeImage);
@@ -28,8 +30,8 @@ const IndexPage = () => {
   return (
     <Layout>
       <HeadTag title={'Home'} />
-      <GatsbyImage
-        image={homePicture}
+      <Image
+        src={data.allContentfulHome.edges[0].node.homeImage.fluid.src}
         alt={homePictureAlt}
         sx={{
           maxWidth: '500px',
