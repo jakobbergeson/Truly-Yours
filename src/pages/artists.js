@@ -1,8 +1,7 @@
 /** @jsx jsx */
-import { jsx, Flex } from 'theme-ui';
+import { jsx, Flex, Image } from 'theme-ui';
 import { useState } from 'react';
 import { graphql, useStaticQuery, Link } from 'gatsby';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import ReactModal from 'react-modal';
 import Layout from '../components/layout';
 import HeadTag from '../components/headTag';
@@ -25,11 +24,15 @@ const Artists = () => {
           artistName
           publishedDate(formatString: "MMM D")
           bannerPicture {
-            gatsbyImageData
+            fluid {
+              src
+            }
           }
-          galleryPictures{
-            gatsbyImageData(width: 600)
+          galleryPictures {
             title
+            fluid {
+            src
+            }
           }
           blogPostTitle
           slug
@@ -43,10 +46,10 @@ const Artists = () => {
     <Layout>
       {data.allContentfulArtist.edges.map(({ node }) => {
 
-        const bannerImage = getImage(node.bannerPicture);
-        const galleryImage1 = getImage(node.galleryPictures[0]);
-        const galleryImage2 = getImage(node.galleryPictures[1]);
-        const galleryImage3 = getImage(node.galleryPictures[2]);
+        const bannerImage = node.bannerPicture.fluid.src;
+        const galleryImage1 = node.galleryPictures[0].fluid.src;
+        const galleryImage2 = node.galleryPictures[1].fluid.src;
+        const galleryImage3 = node.galleryPictures[2].fluid.src;
 
         return (
           <Flex
@@ -57,8 +60,8 @@ const Artists = () => {
             <Flex
               sx={artistsStyles.banImgBox}
             >
-              <GatsbyImage
-                image={bannerImage}
+              <Image
+                src={bannerImage}
                 alt={node.artistName}
               />
             </Flex>
@@ -70,8 +73,8 @@ const Artists = () => {
                 onClick={() => setModal1(true)}
                 sx={artistsStyles.galImgBtn}
               >
-                <GatsbyImage
-                  image={galleryImage1}
+                <Image
+                  src={galleryImage1}
                   alt={node.galleryPictures[0].title}
                 />
               </button>}
@@ -79,8 +82,8 @@ const Artists = () => {
                 onClick={() => setModal2(true)}
                 sx={artistsStyles.galImgBtn}
               >
-                <GatsbyImage
-                  image={galleryImage2}
+                <Image
+                  src={galleryImage2}
                   alt={node.galleryPictures[1].title}
                 />
               </button>}
@@ -88,8 +91,8 @@ const Artists = () => {
                 onClick={() => setModal3(true)}
                 sx={artistsStyles.galImgBtn}
               >
-                <GatsbyImage
-                  image={galleryImage3}
+                <Image
+                  src={galleryImage3}
                   alt={node.galleryPictures[2].title}
                 />
               </button>}
@@ -123,8 +126,8 @@ const Artists = () => {
               shouldCloseOnOverlayClick={true}
               style={artistsStyles.modal}
             >
-              <GatsbyImage
-                image={galleryImage1}
+              <Image
+                src={galleryImage1}
                 alt={node.galleryPictures[0].title}
               />
             </ReactModal>
@@ -135,8 +138,8 @@ const Artists = () => {
               shouldCloseOnOverlayClick={true}
               style={artistsStyles.modal}
             >
-              <GatsbyImage
-                image={galleryImage2}
+              <Image
+                src={galleryImage2}
                 alt={node.galleryPictures[1].title}
               />
             </ReactModal>
@@ -147,8 +150,8 @@ const Artists = () => {
               shouldCloseOnOverlayClick={true}
               style={artistsStyles.modal}
             >
-              <GatsbyImage
-                image={galleryImage3}
+              <Image
+                src={galleryImage3}
                 alt={node.galleryPictures[2].title}
               />
             </ReactModal>

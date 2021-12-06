@@ -6,7 +6,7 @@ import { BLOCKS } from "@contentful/rich-text-types";
 import Layout from "../components/layout";
 import HeadTag from "../components/headTag";
 import { blogStyles } from "../utils";
-import { albumStyles } from "../utils/albumStyles";
+import { albumStyles } from "../utils";
 
 export const query = graphql`
 query($slug: String!) {

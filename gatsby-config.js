@@ -26,11 +26,14 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
-        google: {
-          families: ['Serif:200,300,400,500,600,700,800', 'Cinzel:200,300,400,500,600,700,800', ' Roboto',]
-        }
+        fonts: [
+          `Serif\:200,300,400,500,600,700,800`,
+          `Cinzel\:200,300,400,500,600,700,800`,
+          `Roboto\:200,300,400,500,600,700,800`,
+        ],
+        display: 'swap'
       }
     },
     'gatsby-plugin-theme-ui',

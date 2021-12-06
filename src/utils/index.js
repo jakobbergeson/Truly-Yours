@@ -5,6 +5,7 @@ import { flexStyles } from './flexStyles';
 import { listStyles } from './listStyles';
 import { videsoStyles } from './videoStyles';
 import { artistsStyles } from './artistsStyles';
+import { albumStyles } from './albumStyles';
 import { blogStyles } from './blogStyles';
 import { productPageStyles } from './productPageStyles';
 import { numericInputStyles } from './numericInputStyles';
@@ -13,6 +14,7 @@ import { productCardStyles } from './productCardStyles';
 import { productListingStyles } from './productListingStyles';
 import { cartStyles } from './cartStyles';
 import { lineItemStyles } from './lineItemStyles';
+import { preloader } from './preloaderStyles';
 
 export {
     layoutStyles,
@@ -22,6 +24,7 @@ export {
     listStyles,
     videsoStyles,
     artistsStyles,
+    albumStyles,
     blogStyles,
     productPageStyles,
     numericInputStyles,
@@ -30,4 +33,5 @@ export {
     productListingStyles,
     cartStyles,
     lineItemStyles,
+    preloader,
 };
