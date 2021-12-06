@@ -1,0 +1,55 @@
+
+  body #preloader {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: -10%;
+    right: -10%;
+    height: 0;
+    margin-left: calc(100vw - 100%);
+    overflow-x: hidden;
+  }
+
+  body .preloader_active {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: -10%;
+    right: -10%;
+    height: 0;
+    margin-left: calc(100vw - 100%);
+    overflow-x: hidden;
+    height: 100vh;
+    overflow-y: hidden;
+  }
+
+  body .preloader_active #preloader {
+      height: auto;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #f6f6f6;
+      z-index: 9999;
+      overflow: hidden;
+    }
+
+  body .preloader_ready {
+    height: auto;
+    overflow-y: auto;
+  }
+
+  body .preloader_ready #preloader {
+      animation: preloaderLeaving 0.5s forwards;
+      
+    }
+    
+    @keyframes preloaderLeaving {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }

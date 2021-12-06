@@ -14,7 +14,6 @@ import { productCardStyles } from './productCardStyles';
 import { productListingStyles } from './productListingStyles';
 import { cartStyles } from './cartStyles';
 import { lineItemStyles } from './lineItemStyles';
-import { preloader } from './preloaderStyles';
 
 export {
     layoutStyles,
@@ -33,5 +32,4 @@ export {
     productListingStyles,
     cartStyles,
     lineItemStyles,
-    preloader,
 };
