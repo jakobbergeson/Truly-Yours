@@ -1,7 +1,6 @@
 /** @jsx jsx */
-import { jsx, Flex } from 'theme-ui';
+import { jsx, Flex, Image } from 'theme-ui';
 import React, { useState, createContext } from 'react';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { graphql, useStaticQuery } from 'gatsby';
 import Navigation from './navigation';
 import Footer from './footer';
@@ -43,7 +42,9 @@ const Layout = ({ children, showCartButton = false, }) => {
                 edges {
                     node {
                         icon {
-                            gatsbyImageData
+                            fluid {
+                                src
+                            }
                         }
                         title
                     }
@@ -52,7 +53,6 @@ const Layout = ({ children, showCartButton = false, }) => {
         }
     `);
 
-    const homeIcon = getImage(data.allContentfulHomeIcon.edges[0].node.icon);
     const homeIconAlt = data.allContentfulHomeIcon.edges[0].node.title;
 
     return (
@@ -165,8 +165,8 @@ const Layout = ({ children, showCartButton = false, }) => {
                 direction='down'
                 delay={delay}
             >
-                <GatsbyImage
-                    image={homeIcon}
+                <Image
+                    src={data.allContentfulHomeIcon.edges[0].node.icon.fluid.src}
                     alt={homeIconAlt}
                 />
             </Navigation>

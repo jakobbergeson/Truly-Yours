@@ -3,7 +3,11 @@ export const blogStyles = {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    width: [null, null, null, '800px', null, null, '1000px']
+    width: [null, null, null, '800px', null, null, '1000px'],
+    textAlign: ['center', 'left'],
+    'a': {
+      color: 'red',
+    }
   },
   header: {
     flexDirection: 'column',

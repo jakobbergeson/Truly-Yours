@@ -5,7 +5,7 @@ export const artistsStyles = {
     alignItems: 'center',
   },
   banImgBox: {
-    width: ['200px', '250px', null, '300px', null, '400px', '500px'],
+    width: ['150px', '250px', null, '300px', null, '400px', '500px'],
     justifyContent: 'center'
   },
   galImgBox: {

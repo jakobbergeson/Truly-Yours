@@ -14,6 +14,7 @@ export const lineItemStyles = {
     m: '0px 20px 0px 0px',
     height: '100px',
     width: '100px',
+    minWidth: '100px',
     objectFit: 'cover',
   },
   lineInfo: {

@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx, Image } from "theme-ui";
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { graphql, useStaticQuery } from 'gatsby';
 import Layout from "../components/layout";
 import HeadTag from "../components/headTag";
@@ -22,9 +21,8 @@ const IndexPage = () => {
         }
       }
     }
-    `);
+  `);
 
-  const homePicture = getImage(data.allContentfulHome.edges[0].node.homeImage);
   const homePictureAlt = data.allContentfulHome.edges[0].node.title;
 
   return (
@@ -36,7 +34,7 @@ const IndexPage = () => {
         sx={{
           maxWidth: '500px',
           maxHeight: '500px',
-          m: 'auto'
+          m: 'auto',
         }}
       />
     </Layout>
