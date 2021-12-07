@@ -1,17 +1,25 @@
-/** @jsx jsx */
-import { jsx } from 'theme-ui';
-import { preloader } from './src/utils';
-import React from 'react';
+const React = require("react");
 
-const onRenderBody = ({
-  setPreBodyComponents
+exports.onRenderBody = ({
+  setHeadComponents,
+  setPreBodyComponents,
+  setBodyAttributes,
+  setPostBodyComponents
 }) => {
+  setHeadComponents([
+    <link as="script" key="pre-head" rel="modulepreload" href="/scripts/preloader.js" />
+  ]);
   setPreBodyComponents([
-    <div sx={
-      document.readyState === "complete" ? preloader.body.leaving :
-        preloader.body}>
+    <div
+      key="pre-body"
+      id="preloader"
+    >
     </div>
   ]);
+  setBodyAttributes({
+    className: "preloader_active"
+  });
+  setPostBodyComponents([
+    <script key="post-body" src="/scripts/preloader.js" />
+  ]);
 };
-
-export default onRenderBody;
