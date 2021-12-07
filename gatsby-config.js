@@ -36,6 +36,7 @@ module.exports = {
         display: 'swap'
       }
     },
+    'gatsby-plugin-sass',
     'gatsby-plugin-theme-ui',
     'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',

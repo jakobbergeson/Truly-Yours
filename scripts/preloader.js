@@ -1,5 +1,6 @@
 var body = document.querySelector("body");
 document.onreadystatechange = function () {
+  console.log('READY STATE: ', document.readyState);
   if (document.readyState === "complete") {
     body.classList.add("preloader_ready");
     setTimeout(function () {
