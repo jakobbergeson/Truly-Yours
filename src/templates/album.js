@@ -5,22 +5,20 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../components/layout";
 import HeadTag from "../components/headTag";
 import { albumStyles } from "../utils/albumStyles";
+import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faSoundcloud,
-  faSpotify,
-  faYoutube,
-} from "@fortawesome/free-brands-svg-icons";
+import { fab } from "@fortawesome/free-brands-svg-icons";
 
+library.add(fab);
 
 export const query = graphql`
 query($slug: String!) {
   contentfulAlbum(slug: { eq: $slug }) {
     title
     tracklist
-    soundcloudLink
-    spotifyLink
-    youtubeLink
+    url
+    icon
+    id
     albumArt {
       gatsbyImageData(height: 500)
     }
@@ -88,49 +86,31 @@ const Album = ({ data }) => {
               LISTEN ON
             </h1>
           </Flex>
-          <Flex
+          <ul
             sx={albumStyles.iconBox}
           >
-            <a
-              href={data.contentfulAlbum.soundcloudLink}
-              target="_blank"
-              rel="noreferrer"
-              sx={{
-                m: 3
-              }}
-            >
-              <FontAwesomeIcon
-                icon={faSoundcloud}
-                sx={albumStyles.streamIcon}
-              />
-            </a>
-            <a
-              href={data.contentfulAlbum.spotifyLink}
-              target="_blank"
-              rel="noreferrer"
-              sx={{
-                m: 3
-              }}
-            >
-              <FontAwesomeIcon
-                icon={faSpotify}
-                sx={albumStyles.streamIcon}
-              />
-            </a>
-            <a
-              href={data.contentfulAlbum.youtubeLink}
-              target="_blank"
-              rel="noreferrer"
-              sx={{
-                m: 3
-              }}
-            >
-              <FontAwesomeIcon
-                icon={faYoutube}
-                sx={albumStyles.streamIcon}
-              />
-            </a>
-          </Flex>
+            {data.contentfulAlbum.url.map((link, index) => {
+              return (
+                <li
+                  key={index}
+                >
+                  <a
+                    href={link}
+                    target="_blank"
+                    rel="noreferrer"
+                    sx={{
+                      m: 3
+                    }}
+                  >
+                    <FontAwesomeIcon
+                      icon={['fab', data.contentfulAlbum.icon[index]]}
+                      sx={albumStyles.streamIcon}
+                    />
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
 
         </Grid>
       </Flex>
