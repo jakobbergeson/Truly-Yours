@@ -61,8 +61,11 @@ export const albumStyles = {
     fontWeight: 400,
   },
   iconBox: {
+    display: 'flex',
     justifyContent: 'space-between',
-    width: 'auto'
+    width: 'auto',
+    listStyleType: 'none',
+    p: 0,
   },
   streamIcon: {
     color: 'black',

@@ -62,7 +62,6 @@ const Footer = ({ open }) => {
                                     />
                                 </a>
                             </li>
-
                         );
                     })}
                 </ul>

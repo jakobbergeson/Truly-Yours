@@ -11,7 +11,7 @@ import Cart from './cart';
 import { layoutStyles } from '../utils';
 import { buttonStyles } from '../utils';
 import { flexStyles } from '../utils';
-import '../styles/layout.css';
+import '../styles/layout.scss';
 
 const OpenCart = {};
 
