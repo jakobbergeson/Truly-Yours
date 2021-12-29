@@ -3,7 +3,7 @@ export const lineItemStyles = {
   lineWrap: {
     boxSizing: 'border-box',
     minWidth: '0px',
-    justifyContent: 'space-between',
+    justifyContent: ['space-between', 'start', 'start', 'start', 'space-between'],
     alignItems: 'center',
     display: 'flex',
     borderBottom: '1px solid rgb(122, 122, 122)',
@@ -28,7 +28,7 @@ export const lineItemStyles = {
     textTransform: 'capitalize',
   },
   lineDesc: {
-    maxWidth: ['250px', '250px', '300px', '400px', '150px'],
+    maxWidth: ['150px', '250px', '300px', '150px', '150px'],
   },
   title: {
     fontSize: '14px',
